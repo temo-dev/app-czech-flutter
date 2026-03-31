@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'app.dart';
+import 'core/config/supabase_config.dart';
 import 'core/utils/notification_service.dart';
 import 'data/models/sm2_record.dart';
 import 'data/repositories/curriculum_repository.dart';
@@ -25,6 +27,12 @@ void main() async {
     Hive.openBox('progress-store'),
     Hive.openBox('review-store'),
   ]);
+
+  // Init Supabase
+  await Supabase.initialize(
+    url: SupabaseConfig.url,
+    anonKey: SupabaseConfig.anonKey,
+  );
 
   // Init notifications
   await NotificationService.init();

@@ -37,6 +37,25 @@ class VocabItem {
     this.example,
   });
 
+  factory VocabItem.fromSupabase(Map<String, dynamic> row) {
+    return VocabItem(
+      id: row['id'] as String,
+      czech: row['czech'] as String,
+      vietnamese: row['vietnamese'] as String,
+      pronunciation: row['pronunciation'] as String,
+      audioFile: row['audio_file'] as String?,
+      partOfSpeech: _parsePartOfSpeech(row['part_of_speech'] as String),
+      tags: (row['tags'] as List<dynamic>).cast<String>(),
+      gender: row['gender'] != null ? _parseGender(row['gender'] as String) : null,
+      example: row['example_czech'] != null
+          ? VocabExample(
+              czech: row['example_czech'] as String,
+              vietnamese: (row['example_vietnamese'] ?? '') as String,
+            )
+          : null,
+    );
+  }
+
   factory VocabItem.fromJson(Map<String, dynamic> json) {
     return VocabItem(
       id: json['id'] as String,

@@ -41,6 +41,7 @@ class _GrammarWidgetState extends State<GrammarWidget> {
   @override
   Widget build(BuildContext context) {
     final exampleCs = widget.exercise.example['cs'] as String? ?? '';
+    final exampleVi = widget.exercise.example['vi'] as String? ?? '';
     return SingleChildScrollView(
       padding: const EdgeInsets.all(20),
       child: Column(
@@ -68,7 +69,7 @@ class _GrammarWidgetState extends State<GrammarWidget> {
                   child: Row(
                     children: [
                       const Text('VD: ', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: AppColors.textMuted)),
-                      Expanded(child: Text('${widget.exercise.example['cs']} — ${widget.exercise.example['vi']}',
+                      Expanded(child: Text('$exampleCs — $exampleVi',
                           style: const TextStyle(fontSize: 13, color: AppColors.textDark))),
                       const SizedBox(width: 8),
                       GestureDetector(

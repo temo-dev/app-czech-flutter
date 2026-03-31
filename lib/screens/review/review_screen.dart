@@ -77,8 +77,7 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
         backgroundColor: AppColors.white,
       ),
       body: SafeArea(
-        child: Center(
-          child: ConstrainedBox(
+        child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 480),
           child: Padding(
             padding: const EdgeInsets.all(20),
@@ -159,7 +158,6 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
               ],
             ),
           ),
-        ),
         ),
       ),
     );

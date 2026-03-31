@@ -42,6 +42,9 @@ dependencies:
   # Fonts
   google_fonts: ^6.2.1
 
+  # Backend
+  supabase_flutter: ^2.8.0
+
   # Utilities
   url_launcher: ^6.3.0
   cupertino_icons: ^1.0.8

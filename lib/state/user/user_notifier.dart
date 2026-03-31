@@ -19,6 +19,7 @@ class UserNotifier extends StateNotifier<UserState> {
     final raw = box.get(_kUserKey);
     if (raw != null) {
       state = UserState.fromJson(jsonDecode(raw as String) as Map<String, dynamic>);
+      checkStreak();
     }
   }
 
