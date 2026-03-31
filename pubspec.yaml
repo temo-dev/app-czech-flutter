@@ -1,0 +1,66 @@
+name: czech_for_vietnamese_flutter
+description: Tiếng Séc cho người Việt - Ứng dụng học tiếng Séc cho người Việt
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.5.1
+
+  # Persistence
+  hive_flutter: ^1.1.0
+  hive: ^2.2.3
+
+  # Navigation
+  go_router: ^14.0.0
+
+  # Animations
+  flutter_animate: ^4.5.0
+  flip_card: ^0.7.0
+
+  # TTS & Speech
+  flutter_tts: ^4.0.2
+  speech_to_text: ^6.6.2
+
+  # YouTube
+  youtube_player_flutter: ^9.1.0
+  youtube_player_iframe: ^5.2.2
+
+  # Notifications (mobile only)
+  flutter_local_notifications: ^17.2.2
+  timezone: ^0.9.4
+
+  # JSON
+  json_annotation: ^4.9.0
+
+  # Fonts
+  google_fonts: ^6.2.1
+
+  # Utilities
+  url_launcher: ^6.3.0
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^2.4.11
+  hive_generator: ^2.0.1
+  json_serializable: ^6.8.0
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/data/curriculum.json
+    - assets/data/vocabulary.json
+    - assets/data/grammar.json
+    - assets/images/
+
+  # Fonts loaded via google_fonts package (no local files needed)
