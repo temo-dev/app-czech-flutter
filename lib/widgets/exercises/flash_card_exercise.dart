@@ -5,6 +5,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/utils/tts_helper.dart';
 import '../../data/models/exercise.dart';
 import '../../state/progress/progress_notifier.dart';
+import '../common/vocab_image.dart';
 
 class FlashCardExerciseWidget extends ConsumerStatefulWidget {
   final FlashCardExercise exercise;
@@ -64,7 +65,8 @@ class _FlashCardExerciseWidgetState extends ConsumerState<FlashCardExerciseWidge
                 label: 'Tiếng Séc',
                 bgColor: AppColors.primary,
                 textColor: Colors.white,
-                hint: 'Nhấn để xem nghĩa',
+                hint: item.imageUrl != null ? null : 'Nhấn để xem nghĩa',
+                imageUrl: item.imageUrl,
               ),
               back: _CardFace(
                 content: item.vietnamese,
@@ -136,6 +138,7 @@ class _CardFace extends StatelessWidget {
   final Color bgColor;
   final Color textColor;
   final String? hint;
+  final String? imageUrl;
 
   const _CardFace({
     required this.content,
@@ -144,7 +147,39 @@ class _CardFace extends StatelessWidget {
     required this.bgColor,
     required this.textColor,
     this.hint,
+    this.imageUrl,
   });
+
+  Widget _buildContent() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+          decoration: BoxDecoration(
+            color: textColor.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Text(label, style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: textColor.withOpacity(0.7), letterSpacing: 1)),
+        ),
+        if (imageUrl != null) ...[
+          const SizedBox(height: 12),
+          VocabImage(imageUrl: imageUrl!, height: 140),
+          const SizedBox(height: 12),
+        ] else
+          const SizedBox(height: 20),
+        Text(content, style: TextStyle(fontSize: 32, fontWeight: FontWeight.w800, color: textColor), textAlign: TextAlign.center),
+        if (subContent != null) ...[
+          const SizedBox(height: 8),
+          Text(subContent!, style: TextStyle(fontSize: 16, color: textColor.withOpacity(0.7)), textAlign: TextAlign.center),
+        ],
+        if (hint != null) ...[
+          const SizedBox(height: 24),
+          Text(hint!, style: TextStyle(fontSize: 13, color: textColor.withOpacity(0.5))),
+        ],
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -158,29 +193,17 @@ class _CardFace extends StatelessWidget {
           BoxShadow(color: Colors.black.withOpacity(0.06), blurRadius: 12, offset: const Offset(0, 4)),
         ],
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-            decoration: BoxDecoration(
-              color: textColor.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(20),
+      child: imageUrl != null
+          ? SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
+              child: _buildContent(),
+            )
+          : Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: _buildContent(),
+              ),
             ),
-            child: Text(label, style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: textColor.withOpacity(0.7), letterSpacing: 1)),
-          ),
-          const SizedBox(height: 20),
-          Text(content, style: TextStyle(fontSize: 32, fontWeight: FontWeight.w800, color: textColor), textAlign: TextAlign.center),
-          if (subContent != null) ...[
-            const SizedBox(height: 8),
-            Text(subContent!, style: TextStyle(fontSize: 16, color: textColor.withOpacity(0.7)), textAlign: TextAlign.center),
-          ],
-          if (hint != null) ...[
-            const SizedBox(height: 24),
-            Text(hint!, style: TextStyle(fontSize: 13, color: textColor.withOpacity(0.5))),
-          ],
-        ],
-      ),
     );
   }
 }

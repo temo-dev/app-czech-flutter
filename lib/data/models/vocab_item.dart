@@ -20,6 +20,7 @@ class VocabItem {
   final String vietnamese;
   final String pronunciation;
   final String? audioFile;
+  final String? imageUrl;
   final PartOfSpeech partOfSpeech;
   final List<String> tags;
   final Gender? gender;
@@ -31,6 +32,7 @@ class VocabItem {
     required this.vietnamese,
     required this.pronunciation,
     this.audioFile,
+    this.imageUrl,
     required this.partOfSpeech,
     required this.tags,
     this.gender,
@@ -44,6 +46,7 @@ class VocabItem {
       vietnamese: row['vietnamese'] as String,
       pronunciation: row['pronunciation'] as String,
       audioFile: row['audio_file'] as String?,
+      imageUrl: row['image_url'] as String?,
       partOfSpeech: _parsePartOfSpeech(row['part_of_speech'] as String),
       tags: (row['tags'] as List<dynamic>).cast<String>(),
       gender: row['gender'] != null ? _parseGender(row['gender'] as String) : null,
@@ -63,6 +66,7 @@ class VocabItem {
       vietnamese: json['vietnamese'] as String,
       pronunciation: json['pronunciation'] as String,
       audioFile: json['audioFile'] as String?,
+      imageUrl: json['imageUrl'] as String?,
       partOfSpeech: _parsePartOfSpeech(json['partOfSpeech'] as String),
       tags: (json['tags'] as List<dynamic>).cast<String>(),
       gender: json['gender'] != null ? _parseGender(json['gender'] as String) : null,
