@@ -14,14 +14,28 @@ const _cardColors = [
   (bg: Color(0xFFE0F2FE), text: Color(0xFF0C4A6E), sub: Color(0xFF0284C7)),
 ];
 
-class HomeScreen extends ConsumerWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends ConsumerState<HomeScreen> {
+  ScrollController? _carouselController;
+
+  @override
+  void dispose() {
+    _carouselController?.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final user = ref.watch(userProvider);
     final progress = ref.watch(progressProvider);
     final repo = ref.read(curriculumRepositoryProvider);
+    final notifier = ref.read(progressProvider.notifier);
     final goalPct = (user.todayXP / user.dailyGoalXP).clamp(0.0, 1.0);
 
     final allLessons = <({Lesson lesson, Unit unit, int unitIndex})>[];
@@ -30,6 +44,18 @@ class HomeScreen extends ConsumerWidget {
       for (final lesson in unit.lessons) {
         allLessons.add((lesson: lesson, unit: unit, unitIndex: ui));
       }
+    }
+
+    if (_carouselController == null) {
+      int idx = allLessons.indexWhere((item) =>
+          notifier.isLessonUnlocked(item.lesson.id) &&
+          !progress.completedLessonIds.contains(item.lesson.id));
+      if (idx == -1 && progress.lastLessonId != null) {
+        idx = allLessons.indexWhere((item) => item.lesson.id == progress.lastLessonId);
+      }
+      if (idx < 0) idx = 0;
+      const cardWidth = 164.0;
+      _carouselController = ScrollController(initialScrollOffset: idx * cardWidth);
     }
 
     return Scaffold(
@@ -134,6 +160,7 @@ class HomeScreen extends ConsumerWidget {
                   SizedBox(
                     height: 176,
                     child: ListView.builder(
+                      controller: _carouselController,
                       scrollDirection: Axis.horizontal,
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       itemCount: allLessons.length,
