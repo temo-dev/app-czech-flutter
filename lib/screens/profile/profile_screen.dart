@@ -1,8 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../../core/theme/app_colors.dart';
 import '../../data/models/content.dart';
+import '../../state/auth/auth_notifier.dart';
 import '../../state/progress/progress_notifier.dart';
 import '../../state/review/review_notifier.dart';
 import '../../state/user/user_notifier.dart';
@@ -13,6 +15,7 @@ class ProfileScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final user = ref.watch(userProvider);
+    final auth = ref.watch(authProvider);
     final progress = ref.watch(progressProvider);
     final reviewState = ref.watch(reviewProvider);
     final dueCount = reviewState.getDueCount();
@@ -43,11 +46,19 @@ class ProfileScreen extends ConsumerWidget {
                         CircleAvatar(
                           radius: 36,
                           backgroundColor: AppColors.primary,
-                          child: Text(user.name.isNotEmpty ? user.name[0].toUpperCase() : '?',
-                              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w800, color: Colors.white)),
+                          child: Text(
+                            (auth.nickname ?? user.name).isNotEmpty
+                                ? (auth.nickname ?? user.name)[0].toUpperCase()
+                                : '?',
+                            style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w800, color: Colors.white),
+                          ),
                         ),
                         const SizedBox(height: 12),
-                        Text(user.name, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: AppColors.textDark)),
+                        Text(auth.nickname ?? user.name, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: AppColors.textDark)),
+                        if (auth.isLoggedIn && auth.email != null) ...[
+                          const SizedBox(height: 2),
+                          Text(auth.email!, style: const TextStyle(fontSize: 12, color: AppColors.textMuted)),
+                        ],
                         const SizedBox(height: 4),
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
@@ -119,6 +130,38 @@ class ProfileScreen extends ConsumerWidget {
                       ],
                     ),
                   ),
+                  const SizedBox(height: 16),
+                  // Auth actions
+                  if (auth.isLoggedIn) ...[
+                    Container(
+                      decoration: BoxDecoration(color: AppColors.white, borderRadius: BorderRadius.circular(16), border: Border.all(color: AppColors.border)),
+                      child: Column(
+                        children: [
+                          ListTile(
+                            leading: const Icon(Icons.edit_outlined, color: AppColors.primary),
+                            title: const Text('Đổi biệt danh', style: TextStyle(fontWeight: FontWeight.w600)),
+                            trailing: const Icon(Icons.chevron_right, color: AppColors.textMuted),
+                            onTap: () => _showNicknameDialog(context, ref, auth.nickname ?? ''),
+                          ),
+                          const Divider(height: 1, color: AppColors.border),
+                          ListTile(
+                            leading: const Icon(Icons.logout, color: AppColors.error),
+                            title: const Text('Đăng xuất', style: TextStyle(fontWeight: FontWeight.w600, color: AppColors.error)),
+                            onTap: () async {
+                              await ref.read(authProvider.notifier).signOut();
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ] else ...[
+                    OutlinedButton.icon(
+                      style: OutlinedButton.styleFrom(minimumSize: const Size(double.infinity, 52)),
+                      onPressed: () => context.push('/login'),
+                      icon: const Icon(Icons.login),
+                      label: const Text('Đăng nhập để tham gia cộng đồng'),
+                    ),
+                  ],
                   const SizedBox(height: 80),
                 ],
               ),
@@ -128,6 +171,35 @@ class ProfileScreen extends ConsumerWidget {
       ),
     );
   }
+}
+
+Future<void> _showNicknameDialog(BuildContext context, WidgetRef ref, String current) async {
+  final controller = TextEditingController(text: current);
+  await showDialog<void>(
+    context: context,
+    builder: (ctx) => AlertDialog(
+      title: const Text('Đổi biệt danh'),
+      content: TextField(
+        controller: controller,
+        maxLength: 20,
+        autofocus: true,
+        decoration: const InputDecoration(labelText: 'Biệt danh mới'),
+      ),
+      actions: [
+        TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Huỷ')),
+        TextButton(
+          onPressed: () async {
+            final nickname = controller.text.trim();
+            if (nickname.isEmpty) return;
+            Navigator.pop(ctx);
+            await ref.read(authProvider.notifier).setNickname(nickname);
+          },
+          child: const Text('Lưu'),
+        ),
+      ],
+    ),
+  );
+  controller.dispose();
 }
 
 class _StatCard extends StatelessWidget {

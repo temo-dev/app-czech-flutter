@@ -2,6 +2,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../state/user/user_notifier.dart';
 import '../../widgets/common/app_shell.dart';
+import '../../screens/auth/login_screen.dart';
+import '../../screens/auth/nickname_screen.dart';
 import '../../screens/onboarding/onboarding_screen.dart';
 import '../../screens/placement/placement_test_screen.dart';
 import '../../screens/home/home_screen.dart';
@@ -18,14 +20,25 @@ final routerProvider = Provider<GoRouter>((ref) {
     initialLocation: '/home',
     redirect: (context, state) {
       final user = ref.read(userProvider);
-      final isOnboarding = state.matchedLocation.startsWith('/onboarding');
-      final isPlacement = state.matchedLocation.startsWith('/placement');
+      final loc = state.matchedLocation;
+      final isOnboarding = loc.startsWith('/onboarding');
+      final isPlacement = loc.startsWith('/placement');
+      final isAuth = loc.startsWith('/login') || loc.startsWith('/nickname');
 
+      if (isAuth) return null; // auth screens always accessible
       if (!user.onboardingDone && !isOnboarding) return '/onboarding';
       if (user.onboardingDone && !user.placementDone && !isPlacement) return '/placement';
       return null;
     },
     routes: [
+      GoRoute(
+        path: '/login',
+        builder: (context, state) => LoginScreen(redirectTo: state.extra as String?),
+      ),
+      GoRoute(
+        path: '/nickname',
+        builder: (context, state) => NicknameScreen(redirectTo: state.extra as String?),
+      ),
       GoRoute(
         path: '/onboarding',
         builder: (context, state) => const OnboardingScreen(),
