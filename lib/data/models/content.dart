@@ -13,7 +13,33 @@ extension CefrLevelExt on CefrLevel {
     switch (s.toUpperCase()) {
       case 'A2': return CefrLevel.a2;
       case 'B1': return CefrLevel.b1;
-      default: return CefrLevel.a1;
+      default:   return CefrLevel.a1;
+    }
+  }
+}
+
+enum SkillType { vocabulary, grammar, listening, speaking, reading, writing }
+
+extension SkillTypeExt on SkillType {
+  String get label {
+    switch (this) {
+      case SkillType.vocabulary: return 'Từ Vựng';
+      case SkillType.grammar:    return 'Ngữ Pháp';
+      case SkillType.listening:  return 'Nghe';
+      case SkillType.speaking:   return 'Nói';
+      case SkillType.reading:    return 'Đọc';
+      case SkillType.writing:    return 'Viết';
+    }
+  }
+
+  static SkillType fromString(String s) {
+    switch (s) {
+      case 'vocabulary': return SkillType.vocabulary;
+      case 'grammar':    return SkillType.grammar;
+      case 'speaking':   return SkillType.speaking;
+      case 'reading':    return SkillType.reading;
+      case 'writing':    return SkillType.writing;
+      default:           return SkillType.listening;
     }
   }
 }
@@ -37,6 +63,7 @@ class Lesson {
   final String title;
   final String? subtitle;
   final int xpReward;
+  final SkillType skill;
   final List<ExerciseDef> exercises;
 
   const Lesson({
@@ -44,6 +71,7 @@ class Lesson {
     required this.title,
     this.subtitle,
     required this.xpReward,
+    required this.skill,
     required this.exercises,
   });
 
@@ -52,66 +80,75 @@ class Lesson {
         title: json['title'] as String,
         subtitle: json['subtitle'] as String?,
         xpReward: (json['xpReward'] as num).toInt(),
+        skill: SkillTypeExt.fromString(json['skill'] as String? ?? 'reading'),
         exercises: (json['exercises'] as List<dynamic>)
             .map((e) => ExerciseDef.fromJson(e as Map<String, dynamic>))
             .toList(),
       );
 }
 
-class Unit {
+class Topic {
   final String id;
   final String title;
-  final String subtitle;
-  final String color;
-  final String darkColor;
   final String icon;
   final List<Lesson> lessons;
-  final String? prerequisiteUnitId;
 
-  const Unit({
+  const Topic({
     required this.id,
     required this.title,
-    required this.subtitle,
-    required this.color,
-    required this.darkColor,
     required this.icon,
     required this.lessons,
-    this.prerequisiteUnitId,
   });
 
-  factory Unit.fromJson(Map<String, dynamic> json) => Unit(
+  factory Topic.fromJson(Map<String, dynamic> json) => Topic(
         id: json['id'] as String,
         title: json['title'] as String,
-        subtitle: json['subtitle'] as String,
-        color: json['color'] as String,
-        darkColor: json['darkColor'] as String,
         icon: json['icon'] as String,
         lessons: (json['lessons'] as List<dynamic>)
             .map((e) => Lesson.fromJson(e as Map<String, dynamic>))
             .toList(),
-        prerequisiteUnitId: json['prerequisiteUnitId'] as String?,
+      );
+}
+
+class Level {
+  final String id;
+  final String name;
+  final String title;
+  final List<Topic> topics;
+
+  const Level({
+    required this.id,
+    required this.name,
+    required this.title,
+    required this.topics,
+  });
+
+  factory Level.fromJson(Map<String, dynamic> json) => Level(
+        id: json['id'] as String,
+        name: json['name'] as String,
+        title: json['title'] as String,
+        topics: (json['topics'] as List<dynamic>)
+            .map((e) => Topic.fromJson(e as Map<String, dynamic>))
+            .toList(),
       );
 }
 
 class Course {
   final String id;
   final String title;
-  final String level;
-  final List<Unit> units;
+  final List<Level> levels;
 
   const Course({
     required this.id,
     required this.title,
-    required this.level,
-    required this.units,
+    required this.levels,
   });
 
   factory Course.fromJson(Map<String, dynamic> json) => Course(
         id: json['id'] as String,
         title: json['title'] as String,
-        level: json['level'] as String,
-        units: (json['units'] as List<dynamic>)
-            .map((e) => Unit.fromJson(e as Map<String, dynamic>))
+        levels: (json['levels'] as List<dynamic>)
+            .map((e) => Level.fromJson(e as Map<String, dynamic>))
             .toList(),
       );
 }

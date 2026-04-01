@@ -1,214 +1,212 @@
 {
   "id": "czech-vi-beginner",
   "title": "Tiếng Séc cho người Việt",
-  "level": "beginner",
-  "units": [
+  "levels": [
     {
-      "id": "unit1",
-      "title": "Chào Hỏi",
-      "subtitle": "Greetings & Introductions",
-      "color": "bg-emerald-500",
-      "darkColor": "bg-emerald-600",
-      "icon": "👋",
-      "lessons": [
+      "id": "a0",
+      "name": "A0",
+      "title": "Tuyệt đối sơ cấp",
+      "topics": [
         {
-          "id": "u1l1",
-          "title": "Từ Vựng Chào Hỏi",
-          "subtitle": "Học các câu chào cơ bản",
-          "xpReward": 10,
-          "exercises": [
+          "id": "a0_greetings",
+          "title": "Chào Hỏi",
+          "icon": "👋",
+          "lessons": [
             {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_001",
-                "cs_002",
-                "cs_003",
-                "cs_004"
+              "id": "a0_greetings_vocabulary",
+              "title": "Từ Vựng: Chào Hỏi",
+              "skill": "vocabulary",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_001","cs_002","cs_003","cs_004","cs_005","cs_006","cs_007"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_001","cs_002","cs_003","cs_004","cs_005","cs_006","cs_007"] },
+                { "type": "matching", "vocabIds": ["cs_001","cs_002","cs_003","cs_004","cs_005","cs_006","cs_007"] }
               ]
             },
             {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_001",
-                "cs_002",
-                "cs_003",
-                "cs_004"
+              "id": "a0_greetings_grammar",
+              "title": "Ngữ Pháp: Động từ Být",
+              "skill": "grammar",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Động từ Být", "ruleVi": "Být = là / ở. Chia: já jsem, ty jsi, on/ona je, my jsme, vy jste, oni jsou", "example": { "cs": "Já jsem student.", "vi": "Tôi là sinh viên." }, "question": "Chọn dạng đúng: Ona ___ učitelka.", "correctId": "je", "explanation": "Chủ ngữ 'ona' (cô ấy) dùng 'je'.", "options": [{ "id": "jsem", "text": "jsem" }, { "id": "je", "text": "je" }, { "id": "jsi", "text": "jsi" }, { "id": "jsou", "text": "jsou" }] } },
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Động từ Být (2)", "ruleVi": "Phủ định: không + být → nejsem, nejsi, není, nejsme, nejste, nejsou", "example": { "cs": "Já nejsem doktor.", "vi": "Tôi không phải bác sĩ." }, "question": "Chọn phủ định đúng: My ___ studenti.", "correctId": "nejsme", "explanation": "'My' (chúng tôi) phủ định = 'nejsme'.", "options": [{ "id": "nejsem", "text": "nejsem" }, { "id": "nejste", "text": "nejste" }, { "id": "nejsme", "text": "nejsme" }, { "id": "není", "text": "není" }] } }
               ]
             },
             {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_005",
-                "cs_006",
-                "cs_007"
+              "id": "a0_greetings_listening",
+              "title": "Nghe: Chào Hỏi",
+              "skill": "listening",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "listening", "vocabIds": ["cs_001","cs_002","cs_003","cs_004"] },
+                { "type": "listening", "vocabIds": ["cs_005","cs_006","cs_007","cs_008"] }
               ]
             },
             {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_005",
-                "cs_006",
-                "cs_007"
+              "id": "a0_greetings_speaking",
+              "title": "Nói: Chào Hỏi",
+              "skill": "speaking",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "speaking", "vocabIds": ["cs_001","cs_002","cs_003","cs_004","cs_005","cs_006","cs_007"] }
+              ]
+            },
+            {
+              "id": "a0_greetings_reading",
+              "title": "Đọc: Chào Hỏi",
+              "skill": "reading",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_001","cs_002","cs_003","cs_004"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_001","cs_002","cs_003","cs_004"] },
+                { "type": "flashcard", "vocabIds": ["cs_005","cs_006","cs_007","cs_008","cs_009","cs_010","cs_011","cs_012"] },
+                { "type": "matching", "vocabIds": ["cs_001","cs_002","cs_003","cs_004","cs_006","cs_007"] }
+              ]
+            },
+            {
+              "id": "a0_greetings_writing",
+              "title": "Viết: Chào Hỏi",
+              "skill": "writing",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "fillBlank", "vocabIds": ["cs_001","cs_004","cs_005","cs_006","cs_007"] },
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Động từ Být", "ruleVi": "Být = là / ở. Chia: já jsem, ty jsi, on/ona je, my jsme, vy jste, oni jsou", "example": { "cs": "Já jsem student.", "vi": "Tôi là sinh viên." }, "question": "Chọn dạng đúng: Ona ___ učitelka.", "correctId": "je", "explanation": "Chủ ngữ 'ona' (cô ấy) dùng 'je'.", "options": [{ "id": "jsem", "text": "jsem" }, { "id": "je", "text": "je" }, { "id": "jsi", "text": "jsi" }, { "id": "jsou", "text": "jsou" }] } }
               ]
             }
           ]
         },
         {
-          "id": "u1l2",
-          "title": "Tự Giới Thiệu",
-          "subtitle": "Cách giới thiệu bản thân",
-          "xpReward": 10,
-          "exercises": [
+          "id": "a0_numbers",
+          "title": "Số Đếm",
+          "icon": "🔢",
+          "lessons": [
             {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_008",
-                "cs_009",
-                "cs_010",
-                "cs_011",
-                "cs_012"
+              "id": "a0_numbers_vocabulary",
+              "title": "Từ Vựng: Số Đếm",
+              "skill": "vocabulary",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_101","cs_102","cs_103","cs_104","cs_105","cs_106","cs_107","cs_108","cs_109","cs_110"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_101","cs_102","cs_103","cs_104","cs_105","cs_106","cs_107","cs_108","cs_109","cs_110"] },
+                { "type": "matching", "vocabIds": ["cs_101","cs_102","cs_103","cs_104","cs_105","cs_106","cs_107","cs_108","cs_109","cs_110"] }
               ]
             },
             {
-              "type": "matching",
-              "vocabIds": [
-                "cs_001",
-                "cs_002",
-                "cs_003",
-                "cs_004",
-                "cs_006",
-                "cs_007"
+              "id": "a0_numbers_grammar",
+              "title": "Ngữ Pháp: Số Đếm",
+              "skill": "grammar",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Số đếm 1–10", "ruleVi": "Số đếm trong tiếng Séc: jeden/jedna (1), dva/dvě (2), tři (3), čtyři (4), pět (5), šest (6), sedm (7), osm (8), devět (9), deset (10)", "example": { "cs": "Mám pět knih.", "vi": "Tôi có 5 cuốn sách." }, "question": "Số 7 trong tiếng Séc là?", "correctId": "sedm", "explanation": "Số 7 = 'sedm'.", "options": [{ "id": "šest", "text": "šest" }, { "id": "sedm", "text": "sedm" }, { "id": "osm", "text": "osm" }, { "id": "devět", "text": "devět" }] } }
               ]
             },
             {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_008",
-                "cs_009",
-                "cs_010",
-                "cs_011"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u1l3",
-          "title": "Luyện Nghe",
-          "subtitle": "Nghe và nhận diện tiếng Séc",
-          "xpReward": 15,
-          "exercises": [
-            {
-              "type": "listening",
-              "vocabIds": [
-                "cs_001",
-                "cs_002",
-                "cs_003",
-                "cs_004"
+              "id": "a0_numbers_listening",
+              "title": "Nghe: Số Đếm",
+              "skill": "listening",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "listening", "vocabIds": ["cs_101","cs_102","cs_103","cs_104","cs_105"] },
+                { "type": "listening", "vocabIds": ["cs_106","cs_107","cs_108","cs_109","cs_110"] }
               ]
             },
             {
-              "type": "listening",
-              "vocabIds": [
-                "cs_005",
-                "cs_006",
-                "cs_007",
-                "cs_008"
+              "id": "a0_numbers_speaking",
+              "title": "Nói: Số Đếm",
+              "skill": "speaking",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "speaking", "vocabIds": ["cs_101","cs_102","cs_103","cs_104","cs_105","cs_106","cs_107","cs_108","cs_109","cs_110"] }
               ]
             },
             {
-              "type": "fillBlank",
-              "vocabIds": [
-                "cs_001",
-                "cs_004",
-                "cs_005",
-                "cs_006",
-                "cs_007"
+              "id": "a0_numbers_reading",
+              "title": "Đọc: Số Đếm",
+              "skill": "reading",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_101","cs_102","cs_103","cs_104","cs_105"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_101","cs_102","cs_103","cs_104","cs_105"] },
+                { "type": "flashcard", "vocabIds": ["cs_106","cs_107","cs_108","cs_109","cs_110"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_106","cs_107","cs_108","cs_109","cs_110"] }
+              ]
+            },
+            {
+              "id": "a0_numbers_writing",
+              "title": "Viết: Số Đếm",
+              "skill": "writing",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "matching", "vocabIds": ["cs_101","cs_102","cs_103","cs_104","cs_105"] },
+                { "type": "matching", "vocabIds": ["cs_106","cs_107","cs_108","cs_109","cs_110"] }
               ]
             }
           ]
         },
         {
-          "id": "u1l4",
-          "title": "Ngữ Pháp: Động từ Být",
-          "subtitle": "Chia động từ \"là / ở\"",
-          "xpReward": 15,
-          "exercises": [
+          "id": "a0_colors",
+          "title": "Màu Sắc",
+          "icon": "🎨",
+          "lessons": [
             {
-              "type": "grammar",
-              "vocabIds": [],
-              "data": {
-                "ruleTitle": "Động từ \"být\" (to be)",
-                "ruleVi": "Být = là / ở. Chia theo ngôi:\njá jsem — tôi là\nty jsi — bạn là\non/ona je — anh/cô ấy là\nmy jsme — chúng tôi là\nvy jste — các bạn là\noni jsou — họ là",
-                "example": {
-                  "cs": "Já jsem student. Ona je učitelka.",
-                  "vi": "Tôi là sinh viên. Cô ấy là giáo viên."
-                },
-                "question": "Chọn dạng đúng: \"Bạn ___ student.\"",
-                "options": [
-                  {
-                    "id": "a",
-                    "text": "jsem"
-                  },
-                  {
-                    "id": "b",
-                    "text": "jsi"
-                  },
-                  {
-                    "id": "c",
-                    "text": "je"
-                  },
-                  {
-                    "id": "d",
-                    "text": "jsou"
-                  }
-                ],
-                "correctId": "b",
-                "explanation": "\"ty jsi\" — ngôi thứ 2 số ít (bạn). Dùng \"jsi\" khi nói về \"ty\" (bạn)."
-              }
+              "id": "a0_colors_vocabulary",
+              "title": "Từ Vựng: Màu Sắc",
+              "skill": "vocabulary",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_201","cs_202","cs_203","cs_204","cs_205","cs_206","cs_207","cs_208"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_201","cs_202","cs_203","cs_204","cs_205","cs_206","cs_207","cs_208"] },
+                { "type": "matching", "vocabIds": ["cs_201","cs_202","cs_203","cs_204","cs_205","cs_206","cs_207","cs_208"] }
+              ]
             },
             {
-              "type": "grammar",
-              "vocabIds": [],
-              "data": {
-                "ruleTitle": "Phủ định với \"ne-\"",
-                "ruleVi": "Thêm \"ne\" vào trước động từ để phủ định:\njsem → nejsem\nmám → nemám\njdu → nejdu",
-                "example": {
-                  "cs": "Nejsem unavený. Nemám čas.",
-                  "vi": "Tôi không mệt. Tôi không có thời gian."
-                },
-                "question": "Câu phủ định của \"Mám čas.\" là?",
-                "options": [
-                  {
-                    "id": "a",
-                    "text": "Ne mám čas."
-                  },
-                  {
-                    "id": "b",
-                    "text": "Nemám čas."
-                  },
-                  {
-                    "id": "c",
-                    "text": "Nemit čas."
-                  },
-                  {
-                    "id": "d",
-                    "text": "Mám ne čas."
-                  }
-                ],
-                "correctId": "b",
-                "explanation": "\"ne\" gắn trực tiếp với động từ, không có khoảng trắng: \"nemám\"."
-              }
+              "id": "a0_colors_grammar",
+              "title": "Ngữ Pháp: Tính Từ Màu Sắc",
+              "skill": "grammar",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Tính từ màu sắc", "ruleVi": "Tính từ trong tiếng Séc phải hòa hợp giới tính với danh từ. VD: červený (đực) / červená (cái) / červené (trung)", "example": { "cs": "červené auto (xe đỏ)", "vi": "auto = trung tính → červené" }, "question": "Màu xanh dương cho danh từ cái 'košile' (áo sơ mi) là?", "correctId": "modra", "explanation": "Košile là giới cái → modrá.", "options": [{ "id": "modry", "text": "modrý" }, { "id": "modra", "text": "modrá" }, { "id": "modre", "text": "modré" }] } }
+              ]
             },
             {
-              "type": "speaking",
-              "vocabIds": [
-                "cs_001",
-                "cs_002",
-                "cs_003",
-                "cs_004",
-                "cs_005",
-                "cs_006",
-                "cs_007"
+              "id": "a0_colors_listening",
+              "title": "Nghe: Màu Sắc",
+              "skill": "listening",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "listening", "vocabIds": ["cs_201","cs_202","cs_203","cs_204","cs_205","cs_206"] }
+              ]
+            },
+            {
+              "id": "a0_colors_speaking",
+              "title": "Nói: Màu Sắc",
+              "skill": "speaking",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "speaking", "vocabIds": ["cs_201","cs_202","cs_203","cs_204","cs_205","cs_206","cs_207","cs_208"] }
+              ]
+            },
+            {
+              "id": "a0_colors_reading",
+              "title": "Đọc: Màu Sắc",
+              "skill": "reading",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_201","cs_202","cs_203","cs_204","cs_205","cs_206","cs_207","cs_208"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_201","cs_202","cs_203","cs_204"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_205","cs_206","cs_207","cs_208"] },
+                { "type": "matching", "vocabIds": ["cs_201","cs_202","cs_203","cs_204","cs_205"] }
+              ]
+            },
+            {
+              "id": "a0_colors_writing",
+              "title": "Viết: Màu Sắc",
+              "skill": "writing",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "matching", "vocabIds": ["cs_205","cs_206","cs_207","cs_208"] },
+                { "type": "fillBlank", "vocabIds": ["cs_201","cs_203","cs_205","cs_206"] }
               ]
             }
           ]
@@ -216,148 +214,289 @@
       ]
     },
     {
-      "id": "unit2",
-      "title": "Số Đếm 1–10",
-      "subtitle": "Numbers & Counting",
-      "color": "bg-violet-500",
-      "darkColor": "bg-violet-600",
-      "icon": "🔢",
-      "prerequisiteUnitId": "unit1",
-      "lessons": [
+      "id": "a1",
+      "name": "A1",
+      "title": "Sơ cấp",
+      "topics": [
         {
-          "id": "u2l1",
-          "title": "Số 1 đến 5",
-          "subtitle": "Học số từ một đến năm",
-          "xpReward": 10,
-          "exercises": [
+          "id": "a1_family",
+          "title": "Gia Đình",
+          "icon": "👨‍👩‍👧",
+          "lessons": [
             {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_101",
-                "cs_102",
-                "cs_103",
-                "cs_104",
-                "cs_105"
+              "id": "a1_family_vocabulary",
+              "title": "Từ Vựng: Gia Đình",
+              "skill": "vocabulary",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_301","cs_302","cs_303","cs_304","cs_305","cs_306","cs_307","cs_308","cs_309","cs_310"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_301","cs_302","cs_303","cs_304","cs_305","cs_306","cs_307","cs_308","cs_309","cs_310"] },
+                { "type": "matching", "vocabIds": ["cs_301","cs_302","cs_303","cs_304","cs_305","cs_306","cs_307","cs_308","cs_309","cs_310"] }
               ]
             },
             {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_101",
-                "cs_102",
-                "cs_103",
-                "cs_104",
-                "cs_105"
+              "id": "a1_family_grammar",
+              "title": "Ngữ Pháp: Sở Hữu",
+              "skill": "grammar",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Tính từ sở hữu (Přivlastňovací zájmena)", "ruleVi": "Tiếng Séc dùng: můj/moje (của tôi), tvůj/tvoje (của bạn), jeho (của anh ấy), její (của cô ấy).", "example": { "cs": "Moje máma je učitelka.", "vi": "Mẹ tôi là giáo viên." }, "question": "Điền đúng: ___ táta je doktor. (của tôi - giới đực)", "correctId": "muj", "explanation": "táta là giới đực → můj táta.", "options": [{ "id": "muj", "text": "Můj" }, { "id": "moje", "text": "Moje" }, { "id": "tvuj", "text": "Tvůj" }, { "id": "jeji", "text": "Její" }] } }
               ]
             },
             {
-              "type": "matching",
-              "vocabIds": [
-                "cs_101",
-                "cs_102",
-                "cs_103",
-                "cs_104",
-                "cs_105"
+              "id": "a1_family_listening",
+              "title": "Nghe: Gia Đình",
+              "skill": "listening",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "listening", "vocabIds": ["cs_301","cs_302","cs_303","cs_304","cs_305","cs_306"] },
+                { "type": "listening", "vocabIds": ["cs_307","cs_308","cs_309","cs_310"] }
+              ]
+            },
+            {
+              "id": "a1_family_speaking",
+              "title": "Nói: Gia Đình",
+              "skill": "speaking",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "speaking", "vocabIds": ["cs_301","cs_302","cs_303","cs_304","cs_305","cs_306","cs_307","cs_308","cs_309","cs_310"] }
+              ]
+            },
+            {
+              "id": "a1_family_reading",
+              "title": "Đọc: Gia Đình",
+              "skill": "reading",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_301","cs_302","cs_303","cs_304","cs_305","cs_306"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_301","cs_302","cs_303","cs_304","cs_305","cs_306"] },
+                { "type": "flashcard", "vocabIds": ["cs_307","cs_308","cs_309","cs_310"] },
+                { "type": "matching", "vocabIds": ["cs_301","cs_302","cs_303","cs_304","cs_305"] },
+                { "type": "matching", "vocabIds": ["cs_306","cs_307","cs_308","cs_309","cs_310"] }
+              ]
+            },
+            {
+              "id": "a1_family_writing",
+              "title": "Viết: Gia Đình",
+              "skill": "writing",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "fillBlank", "vocabIds": ["cs_301","cs_302","cs_303","cs_304","cs_305"] },
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tên tiếng Séc của 'bố'", "answer": "táta", "hint": "t---a" } },
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tên tiếng Séc của 'mẹ'", "answer": "máma", "hint": "m--a" } }
               ]
             }
           ]
         },
         {
-          "id": "u2l2",
-          "title": "Số 6 đến 10",
-          "subtitle": "Học số từ sáu đến mười",
-          "xpReward": 10,
-          "exercises": [
+          "id": "a1_food",
+          "title": "Đồ Ăn & Thức Uống",
+          "icon": "🍽️",
+          "lessons": [
             {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_106",
-                "cs_107",
-                "cs_108",
-                "cs_109",
-                "cs_110"
+              "id": "a1_food_vocabulary",
+              "title": "Từ Vựng: Đồ Ăn",
+              "skill": "vocabulary",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_401","cs_402","cs_403","cs_404","cs_405","cs_406","cs_407","cs_408","cs_409","cs_410"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_401","cs_402","cs_403","cs_404","cs_405","cs_406","cs_407","cs_408","cs_409","cs_410"] },
+                { "type": "matching", "vocabIds": ["cs_401","cs_402","cs_403","cs_404","cs_405","cs_406","cs_407","cs_408","cs_409","cs_410"] }
               ]
             },
             {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_106",
-                "cs_107",
-                "cs_108",
-                "cs_109",
-                "cs_110"
+              "id": "a1_food_grammar",
+              "title": "Ngữ Pháp: Giới Tính Danh Từ",
+              "skill": "grammar",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Giới tính danh từ", "ruleVi": "Tiếng Séc có 3 giới: đực (ten), cái (ta), trung (to). Danh từ kết thúc -a thường là giới cái.", "example": { "cs": "ten chleba (m), ta káva (f), to mléko (n)", "vi": "bánh mì (đực), cà phê (cái), sữa (trung)" }, "question": "Danh từ 'polévka' (súp) thuộc giới nào?", "correctId": "ta", "explanation": "Kết thúc -a → giới cái → dùng 'ta'.", "options": [{ "id": "ten", "text": "ten (đực)" }, { "id": "ta", "text": "ta (cái)" }, { "id": "to", "text": "to (trung)" }] } },
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Giới tính danh từ (2)", "ruleVi": "Danh từ kết thúc phụ âm thường là giới đực. Danh từ kết thúc -o/-í thường là giới trung.", "example": { "cs": "ten chléb (đực), to máslo (trung)", "vi": "bánh mì, bơ" }, "question": "Danh từ 'mléko' (sữa) thuộc giới nào?", "correctId": "to", "explanation": "Kết thúc -o → giới trung → 'to'.", "options": [{ "id": "ten", "text": "ten (đực)" }, { "id": "ta", "text": "ta (cái)" }, { "id": "to", "text": "to (trung)" }] } }
               ]
             },
             {
-              "type": "matching",
-              "vocabIds": [
-                "cs_106",
-                "cs_107",
-                "cs_108",
-                "cs_109",
-                "cs_110"
+              "id": "a1_food_listening",
+              "title": "Nghe: Đồ Ăn",
+              "skill": "listening",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "listening", "vocabIds": ["cs_401","cs_402","cs_403","cs_404","cs_405","cs_406","cs_407","cs_408"] }
+              ]
+            },
+            {
+              "id": "a1_food_speaking",
+              "title": "Nói: Đồ Ăn",
+              "skill": "speaking",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "speaking", "vocabIds": ["cs_401","cs_402","cs_403","cs_404","cs_405","cs_406","cs_407","cs_408","cs_409","cs_410"] }
+              ]
+            },
+            {
+              "id": "a1_food_reading",
+              "title": "Đọc: Đồ Ăn",
+              "skill": "reading",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_401","cs_402","cs_403","cs_404","cs_405","cs_406"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_401","cs_402","cs_403","cs_404","cs_405","cs_406"] },
+                { "type": "flashcard", "vocabIds": ["cs_407","cs_408","cs_409","cs_410"] },
+                { "type": "matching", "vocabIds": ["cs_401","cs_402","cs_403","cs_404","cs_405"] },
+                { "type": "matching", "vocabIds": ["cs_406","cs_407","cs_408","cs_409","cs_410"] },
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Giới tính danh từ", "ruleVi": "Tiếng Séc có 3 giới: đực (ten), cái (ta), trung (to). Danh từ kết thúc -a thường là giới cái.", "example": { "cs": "ten chleba (m), ta káva (f), to mléko (n)", "vi": "bánh mì (đực), cà phê (cái), sữa (trung)" }, "question": "Danh từ 'polévka' (súp) thuộc giới nào?", "correctId": "ta", "explanation": "Kết thúc -a → giới cái → dùng 'ta'.", "options": [{ "id": "ten", "text": "ten (đực)" }, { "id": "ta", "text": "ta (cái)" }, { "id": "to", "text": "to (trung)" }] } }
+              ]
+            },
+            {
+              "id": "a1_food_writing",
+              "title": "Viết: Đồ Ăn",
+              "skill": "writing",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'bánh mì'", "answer": "chleba", "hint": "c----a" } },
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'cà phê'", "answer": "káva", "hint": "k--a" } },
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'nước'", "answer": "voda", "hint": "v--a" } },
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'thịt'", "answer": "maso", "hint": "m--o" } }
               ]
             }
           ]
         },
         {
-          "id": "u2l3",
-          "title": "Luyện Nghe Số",
-          "subtitle": "Nghe số đếm tiếng Séc",
-          "xpReward": 15,
-          "exercises": [
+          "id": "a1_time",
+          "title": "Thời Gian",
+          "icon": "🕐",
+          "lessons": [
             {
-              "type": "listening",
-              "vocabIds": [
-                "cs_101",
-                "cs_102",
-                "cs_103",
-                "cs_104",
-                "cs_105"
+              "id": "a1_time_vocabulary",
+              "title": "Từ Vựng: Thời Gian",
+              "skill": "vocabulary",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_501","cs_502","cs_503","cs_504","cs_505","cs_506","cs_507","cs_508","cs_509","cs_510"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_501","cs_502","cs_503","cs_504","cs_505","cs_506","cs_507","cs_508","cs_509","cs_510"] },
+                { "type": "matching", "vocabIds": ["cs_501","cs_502","cs_503","cs_504","cs_505","cs_506","cs_507","cs_508","cs_509","cs_510"] }
               ]
             },
             {
-              "type": "listening",
-              "vocabIds": [
-                "cs_106",
-                "cs_107",
-                "cs_108",
-                "cs_109",
-                "cs_110"
+              "id": "a1_time_grammar",
+              "title": "Ngữ Pháp: Thời Gian",
+              "skill": "grammar",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Hỏi về thời gian", "ruleVi": "Kdy? (Khi nào?), V kolik hodin? (Mấy giờ?), Jak dlouho? (Bao lâu?)", "example": { "cs": "Kdy přijdeš? — Zítra.", "vi": "Bạn đến khi nào? — Ngày mai." }, "question": "Câu hỏi 'Bao giờ bạn đến?' dùng từ hỏi nào?", "correctId": "kdy", "explanation": "'Kdy' = Khi nào / Bao giờ.", "options": [{ "id": "kde", "text": "Kde?" }, { "id": "kdy", "text": "Kdy?" }, { "id": "kdo", "text": "Kdo?" }, { "id": "jak", "text": "Jak?" }] } }
               ]
             },
             {
-              "type": "matching",
-              "vocabIds": [
-                "cs_101",
-                "cs_103",
-                "cs_105",
-                "cs_107",
-                "cs_109",
-                "cs_110"
+              "id": "a1_time_listening",
+              "title": "Nghe: Thời Gian",
+              "skill": "listening",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "listening", "vocabIds": ["cs_501","cs_502","cs_503","cs_504","cs_505"] },
+                { "type": "listening", "vocabIds": ["cs_506","cs_507","cs_508","cs_509","cs_510"] }
+              ]
+            },
+            {
+              "id": "a1_time_speaking",
+              "title": "Nói: Thời Gian",
+              "skill": "speaking",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "speaking", "vocabIds": ["cs_501","cs_502","cs_503","cs_504","cs_505","cs_506","cs_507","cs_508","cs_509","cs_510"] }
+              ]
+            },
+            {
+              "id": "a1_time_reading",
+              "title": "Đọc: Thời Gian",
+              "skill": "reading",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_501","cs_502","cs_503","cs_504","cs_505"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_501","cs_502","cs_503","cs_504","cs_505"] },
+                { "type": "flashcard", "vocabIds": ["cs_506","cs_507","cs_508","cs_509","cs_510"] },
+                { "type": "matching", "vocabIds": ["cs_501","cs_502","cs_503","cs_504","cs_505"] },
+                { "type": "matching", "vocabIds": ["cs_506","cs_507","cs_508","cs_509","cs_510"] }
+              ]
+            },
+            {
+              "id": "a1_time_writing",
+              "title": "Viết: Thời Gian",
+              "skill": "writing",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "fillBlank", "vocabIds": ["cs_501","cs_502","cs_503","cs_504","cs_505"] },
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'hôm nay'", "answer": "dnes", "hint": "d---" } },
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'ngày mai'", "answer": "zítra", "hint": "z---a" } }
               ]
             }
           ]
         },
         {
-          "id": "u2l4",
-          "title": "Luyện Nói Số",
-          "subtitle": "Đọc số đếm tiếng Séc",
-          "xpReward": 20,
-          "exercises": [
+          "id": "a1_shopping",
+          "title": "Mua Sắm",
+          "icon": "🛍️",
+          "lessons": [
             {
-              "type": "speaking",
-              "vocabIds": [
-                "cs_101",
-                "cs_102",
-                "cs_103",
-                "cs_104",
-                "cs_105",
-                "cs_106",
-                "cs_107",
-                "cs_108",
-                "cs_109",
-                "cs_110"
+              "id": "a1_shopping_vocabulary",
+              "title": "Từ Vựng: Mua Sắm",
+              "skill": "vocabulary",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_601","cs_602","cs_603","cs_604","cs_605","cs_606","cs_607","cs_608","cs_609","cs_610"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_601","cs_602","cs_603","cs_604","cs_605","cs_606","cs_607","cs_608","cs_609","cs_610"] },
+                { "type": "matching", "vocabIds": ["cs_601","cs_602","cs_603","cs_604","cs_605","cs_606","cs_607","cs_608","cs_609","cs_610"] }
+              ]
+            },
+            {
+              "id": "a1_shopping_grammar",
+              "title": "Ngữ Pháp: Cách 4 (Accusative)",
+              "skill": "grammar",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Cách 4 (Accusative)", "ruleVi": "Accusative dùng cho tân ngữ trực tiếp. Sau động từ 'kupovat/koupit' (mua).", "example": { "cs": "Kupuji chleba.", "vi": "Tôi mua bánh mì." }, "question": "Câu nào dùng accusative đúng?", "correctId": "kupuji", "explanation": "Sau động từ 'kupuji', danh từ ở accusative.", "options": [{ "id": "kupuji", "text": "Kupuji kávu." }, { "id": "jsem", "text": "Jsem obchod." }, { "id": "mam", "text": "Mám doma." }] } },
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Accusative — biến đổi danh từ", "ruleVi": "Giới cái: žena → ženu, káva → kávu. Giới đực vô sinh: stůl → stůl (giữ nguyên). Giới đực sinh vật: muž → muže.", "example": { "cs": "Vidím ženu. (Tôi thấy người phụ nữ.)", "vi": "žena → ženu (accusative cái)" }, "question": "Accusative của 'žena' (phụ nữ) là?", "correctId": "zenu", "explanation": "Giới cái -a → thay bằng -u: žena → ženu.", "options": [{ "id": "zenu", "text": "ženu" }, { "id": "zene", "text": "ženě" }, { "id": "zeny", "text": "ženy" }] } }
+              ]
+            },
+            {
+              "id": "a1_shopping_listening",
+              "title": "Nghe: Mua Sắm",
+              "skill": "listening",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "listening", "vocabIds": ["cs_601","cs_602","cs_603","cs_604","cs_605"] },
+                { "type": "listening", "vocabIds": ["cs_606","cs_607","cs_608","cs_609","cs_610"] }
+              ]
+            },
+            {
+              "id": "a1_shopping_speaking",
+              "title": "Nói: Mua Sắm",
+              "skill": "speaking",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "speaking", "vocabIds": ["cs_601","cs_602","cs_603","cs_604","cs_605","cs_606","cs_607","cs_608","cs_609","cs_610"] }
+              ]
+            },
+            {
+              "id": "a1_shopping_reading",
+              "title": "Đọc: Mua Sắm",
+              "skill": "reading",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_601","cs_602","cs_603","cs_604","cs_605"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_601","cs_602","cs_603","cs_604","cs_605"] },
+                { "type": "flashcard", "vocabIds": ["cs_606","cs_607","cs_608","cs_609","cs_610"] },
+                { "type": "matching", "vocabIds": ["cs_601","cs_602","cs_604","cs_605","cs_606"] },
+                { "type": "matching", "vocabIds": ["cs_607","cs_608","cs_609","cs_610"] },
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Cách 4 (Accusative)", "ruleVi": "Accusative dùng cho tân ngữ trực tiếp. Sau động từ 'kupovat/koupit' (mua).", "example": { "cs": "Kupuji chleba.", "vi": "Tôi mua bánh mì." }, "question": "Câu nào dùng accusative đúng?", "correctId": "kupuji", "explanation": "Sau động từ 'kupuji', danh từ ở accusative.", "options": [{ "id": "kupuji", "text": "Kupuji kávu." }, { "id": "jsem", "text": "Jsem obchod." }, { "id": "mam", "text": "Mám doma." }] } }
+              ]
+            },
+            {
+              "id": "a1_shopping_writing",
+              "title": "Viết: Mua Sắm",
+              "skill": "writing",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'bao nhiêu tiền?'", "answer": "Kolik to stojí?", "hint": "K----- to s-----?" } },
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'hóa đơn'", "answer": "účet", "hint": "ú--t" } }
               ]
             }
           ]
@@ -365,116 +504,284 @@
       ]
     },
     {
-      "id": "unit3",
-      "title": "Màu Sắc",
-      "subtitle": "Colors",
-      "color": "bg-pink-500",
-      "darkColor": "bg-pink-600",
-      "icon": "🎨",
-      "prerequisiteUnitId": "unit2",
-      "lessons": [
+      "id": "a2",
+      "name": "A2",
+      "title": "Trung cấp thấp",
+      "topics": [
         {
-          "id": "u3l1",
-          "title": "Các Màu Cơ Bản",
-          "subtitle": "Học tên màu sắc",
-          "xpReward": 10,
-          "exercises": [
+          "id": "a2_health",
+          "title": "Bệnh Viện",
+          "icon": "🏥",
+          "lessons": [
             {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_201",
-                "cs_202",
-                "cs_203",
-                "cs_204",
-                "cs_205",
-                "cs_206",
-                "cs_207",
-                "cs_208"
+              "id": "a2_health_vocabulary",
+              "title": "Từ Vựng: Bệnh Viện",
+              "skill": "vocabulary",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_701","cs_702","cs_703","cs_704","cs_705","cs_706","cs_707","cs_708","cs_709","cs_710"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_701","cs_702","cs_703","cs_704","cs_705","cs_706","cs_707","cs_708","cs_709","cs_710"] },
+                { "type": "matching", "vocabIds": ["cs_701","cs_702","cs_703","cs_704","cs_705","cs_706","cs_707","cs_708","cs_709","cs_710"] }
               ]
             },
             {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_201",
-                "cs_202",
-                "cs_203",
-                "cs_204"
+              "id": "a2_health_grammar",
+              "title": "Ngữ Pháp: Diễn Đạt Cảm Giác",
+              "skill": "grammar",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Diễn đạt đau/cảm giác", "ruleVi": "Dùng 'Bolí mě + bộ phận cơ thể' để nói bị đau. 'Mám + danh từ' để nói có triệu chứng.", "example": { "cs": "Bolí mě hlava. Mám horečku.", "vi": "Tôi bị đau đầu. Tôi bị sốt." }, "question": "Câu nào nghĩa là 'Tôi bị đau bụng'?", "correctId": "bricho", "explanation": "Bolí mě + břicho (bụng).", "options": [{ "id": "bricho", "text": "Bolí mě břicho." }, { "id": "mam", "text": "Mám břicho." }, { "id": "jsem", "text": "Jsem nemocný." }] } }
               ]
             },
             {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_205",
-                "cs_206",
-                "cs_207",
-                "cs_208"
+              "id": "a2_health_listening",
+              "title": "Nghe: Bệnh Viện",
+              "skill": "listening",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "listening", "vocabIds": ["cs_701","cs_702","cs_703","cs_704","cs_705"] },
+                { "type": "listening", "vocabIds": ["cs_706","cs_707","cs_708","cs_709","cs_710"] }
+              ]
+            },
+            {
+              "id": "a2_health_speaking",
+              "title": "Nói: Bệnh Viện",
+              "skill": "speaking",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "speaking", "vocabIds": ["cs_701","cs_702","cs_703","cs_704","cs_705","cs_706","cs_707","cs_708","cs_709","cs_710"] }
+              ]
+            },
+            {
+              "id": "a2_health_reading",
+              "title": "Đọc: Bệnh Viện",
+              "skill": "reading",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_701","cs_702","cs_703","cs_704","cs_705"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_701","cs_702","cs_703","cs_704","cs_705"] },
+                { "type": "flashcard", "vocabIds": ["cs_706","cs_707","cs_708","cs_709","cs_710"] },
+                { "type": "matching", "vocabIds": ["cs_701","cs_702","cs_703","cs_704","cs_705"] },
+                { "type": "matching", "vocabIds": ["cs_706","cs_707","cs_708","cs_709","cs_710"] },
+                { "type": "reading", "vocabIds": [], "data": { "passageCs": "Pan Nguyen přichází k lékaři. Lékař se ptá: 'Co vás bolí?' Pan Nguyen odpovídá: 'Bolí mě hlava a mám horečku.' Lékař předepisuje léky.", "passageVi": "Ông Nguyễn đến gặp bác sĩ. Bác sĩ hỏi: 'Ông bị đau gì?' Ông Nguyễn trả lời: 'Tôi bị đau đầu và sốt.' Bác sĩ kê đơn thuốc.", "questions": [{ "question": "Co pana Nguyena bolí?", "questionVi": "Ông Nguyễn bị đau gì?", "correctId": "hlava", "options": [{ "id": "hlava", "text": "Hlava" }, { "id": "noha", "text": "Noha" }, { "id": "ruka", "text": "Ruka" }] }] } }
+              ]
+            },
+            {
+              "id": "a2_health_writing",
+              "title": "Viết: Bệnh Viện",
+              "skill": "writing",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "fillBlank", "vocabIds": ["cs_701","cs_702","cs_703","cs_704","cs_705"] },
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'tôi bị đau đầu'", "answer": "Bolí mě hlava", "hint": "B--- mě h----" } }
               ]
             }
           ]
         },
         {
-          "id": "u3l2",
-          "title": "Ghép Màu",
-          "subtitle": "Nối tên màu tiếng Séc",
-          "xpReward": 10,
-          "exercises": [
+          "id": "a2_transport",
+          "title": "Giao Thông",
+          "icon": "🚇",
+          "lessons": [
             {
-              "type": "matching",
-              "vocabIds": [
-                "cs_201",
-                "cs_202",
-                "cs_203",
-                "cs_204",
-                "cs_205"
+              "id": "a2_transport_vocabulary",
+              "title": "Từ Vựng: Giao Thông",
+              "skill": "vocabulary",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_801","cs_802","cs_803","cs_804","cs_805","cs_806","cs_807","cs_808","cs_809","cs_810"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_801","cs_802","cs_803","cs_804","cs_805","cs_806","cs_807","cs_808","cs_809","cs_810"] },
+                { "type": "matching", "vocabIds": ["cs_801","cs_802","cs_803","cs_804","cs_805","cs_806","cs_807","cs_808","cs_809","cs_810"] }
               ]
             },
             {
-              "type": "matching",
-              "vocabIds": [
-                "cs_205",
-                "cs_206",
-                "cs_207",
-                "cs_208"
+              "id": "a2_transport_grammar",
+              "title": "Ngữ Pháp: Thì Quá Khứ",
+              "skill": "grammar",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Thì quá khứ (Minulý čas)", "ruleVi": "Thêm '-l/-la/-lo' vào gốc động từ. Ví dụ: jít → šel/šla.", "example": { "cs": "Jel jsem metrem.", "vi": "Tôi đã đi tàu điện ngầm." }, "question": "Dạng quá khứ của 'jít' (đi bộ) với 'já' (nam) là gì?", "correctId": "sel", "explanation": "'Já' nam → 'šel jsem'.", "options": [{ "id": "sel", "text": "šel jsem" }, { "id": "jdu", "text": "jdu" }, { "id": "pojdu", "text": "půjdu" }] } },
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Quá khứ — phụ động từ", "ruleVi": "Phụ động từ 'být' ở quá khứ: jsem/jsi/— /jsme/jste/—. Ngôi 3 không cần phụ động từ.", "example": { "cs": "On jel. (không cần 'je')", "vi": "Anh ấy đã đi." }, "question": "Câu quá khứ đúng với 'ona' (cô ấy)?", "correctId": "sla", "explanation": "Ngôi 3 cái: šla (không cần phụ động từ).", "options": [{ "id": "sla", "text": "Šla." }, { "id": "sla_je", "text": "Je šla." }, { "id": "sla_jsem", "text": "Šla jsem." }] } }
               ]
             },
             {
-              "type": "fillBlank",
-              "vocabIds": [
-                "cs_201",
-                "cs_203",
-                "cs_205",
-                "cs_206"
+              "id": "a2_transport_listening",
+              "title": "Nghe: Giao Thông",
+              "skill": "listening",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "listening", "vocabIds": ["cs_801","cs_802","cs_803","cs_804","cs_805"] },
+                { "type": "listening", "vocabIds": ["cs_806","cs_807","cs_808","cs_809","cs_810"] }
+              ]
+            },
+            {
+              "id": "a2_transport_speaking",
+              "title": "Nói: Giao Thông",
+              "skill": "speaking",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "speaking", "vocabIds": ["cs_801","cs_802","cs_803","cs_804","cs_805","cs_806","cs_807"] }
+              ]
+            },
+            {
+              "id": "a2_transport_reading",
+              "title": "Đọc: Giao Thông",
+              "skill": "reading",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_801","cs_802","cs_803","cs_804","cs_805"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_801","cs_802","cs_803","cs_804","cs_805"] },
+                { "type": "flashcard", "vocabIds": ["cs_806","cs_807","cs_808","cs_809","cs_810"] },
+                { "type": "matching", "vocabIds": ["cs_801","cs_802","cs_803","cs_804","cs_805"] },
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Thì quá khứ (Minulý čas)", "ruleVi": "Thêm '-l/-la/-lo' vào gốc động từ. Ví dụ: jít → šel/šla.", "example": { "cs": "Jel jsem metrem.", "vi": "Tôi đã đi tàu điện ngầm." }, "question": "Dạng quá khứ của 'jít' (đi bộ) với 'já' (nam) là gì?", "correctId": "sel", "explanation": "'Já' nam → 'šel jsem'.", "options": [{ "id": "sel", "text": "šel jsem" }, { "id": "jdu", "text": "jdu" }, { "id": "pojdu", "text": "půjdu" }] } }
+              ]
+            },
+            {
+              "id": "a2_transport_writing",
+              "title": "Viết: Giao Thông",
+              "skill": "writing",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "fillBlank", "vocabIds": ["cs_806","cs_807","cs_808","cs_809","cs_810"] },
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'một vé đến Praha'", "answer": "Jeden lístek do Prahy", "hint": "J---- l------ do P----" } }
               ]
             }
           ]
         },
         {
-          "id": "u3l3",
-          "title": "Luyện Nói Màu",
-          "xpReward": 15,
-          "exercises": [
+          "id": "a2_restaurant",
+          "title": "Nhà Hàng",
+          "icon": "🍴",
+          "lessons": [
             {
-              "type": "listening",
-              "vocabIds": [
-                "cs_201",
-                "cs_202",
-                "cs_203",
-                "cs_204",
-                "cs_205",
-                "cs_206"
+              "id": "a2_restaurant_vocabulary",
+              "title": "Từ Vựng: Nhà Hàng",
+              "skill": "vocabulary",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_401","cs_403","cs_404","cs_405","cs_407","cs_408","cs_409","cs_410"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_401","cs_403","cs_404","cs_405","cs_407","cs_408","cs_409","cs_410"] },
+                { "type": "matching", "vocabIds": ["cs_401","cs_403","cs_404","cs_405","cs_407","cs_408","cs_409","cs_410"] }
               ]
             },
             {
-              "type": "speaking",
-              "vocabIds": [
-                "cs_201",
-                "cs_202",
-                "cs_203",
-                "cs_204",
-                "cs_205",
-                "cs_206",
-                "cs_207",
-                "cs_208"
+              "id": "a2_restaurant_grammar",
+              "title": "Ngữ Pháp: Gọi Món",
+              "skill": "grammar",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Gọi món — Dám si / Prosím", "ruleVi": "Để gọi món: 'Dám si + accusative' (tôi sẽ dùng...) hoặc '...prosím' (làm ơn cho tôi...)", "example": { "cs": "Dám si svíčkovou, prosím.", "vi": "Cho tôi svíčková, làm ơn." }, "question": "Cách gọi món lịch sự nhất là?", "correctId": "dam_si", "explanation": "'Dám si' + tên món + 'prosím' là cách lịch sự.", "options": [{ "id": "dam_si", "text": "Dám si polévku, prosím." }, { "id": "chci", "text": "Chci polévku!" }, { "id": "dejte", "text": "Dejte mi to." }] } }
+              ]
+            },
+            {
+              "id": "a2_restaurant_listening",
+              "title": "Nghe: Nhà Hàng",
+              "skill": "listening",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "listening", "vocabIds": ["cs_401","cs_403","cs_404","cs_405","cs_407","cs_408"] },
+                { "type": "video", "vocabIds": [], "data": { "youtubeId": "dQw4w9WgXcQ", "title": "Tại Nhà Hàng Séc", "level": "A2", "question": "Khách hàng gọi món gì?", "correctId": "polévka", "options": [{ "id": "polévka", "text": "Polévka (súp)" }, { "id": "káva", "text": "Káva (cà phê)" }, { "id": "voda", "text": "Voda (nước)" }] } }
+              ]
+            },
+            {
+              "id": "a2_restaurant_speaking",
+              "title": "Nói: Nhà Hàng",
+              "skill": "speaking",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "speaking", "vocabIds": ["cs_401","cs_403","cs_404","cs_405","cs_406","cs_407","cs_408","cs_409","cs_410"] }
+              ]
+            },
+            {
+              "id": "a2_restaurant_reading",
+              "title": "Đọc: Nhà Hàng",
+              "skill": "reading",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_401","cs_403","cs_404","cs_405","cs_407","cs_408","cs_409","cs_410"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_401","cs_403","cs_404","cs_405","cs_406","cs_407"] },
+                { "type": "reading", "vocabIds": [], "data": { "passageCs": "Číšník: 'Co si dáte?' Host: 'Dám si svíčkovou a pivo, prosím.' Číšník: 'A k pití?' Host: 'Minerálku, prosím.'", "passageVi": "Bồi bàn: 'Quý khách dùng gì?' Khách: 'Cho tôi svíčková và bia.' Bồi bàn: 'Còn đồ uống?' Khách: 'Nước khoáng.'", "questions": [{ "question": "Co si host objednal k jídlu?", "questionVi": "Khách gọi món ăn gì?", "correctId": "svickova", "options": [{ "id": "svickova", "text": "Svíčkovou" }, { "id": "pizza", "text": "Pizzu" }, { "id": "polévka", "text": "Polévku" }] }] } }
+              ]
+            },
+            {
+              "id": "a2_restaurant_writing",
+              "title": "Viết: Nhà Hàng",
+              "skill": "writing",
+              "xpReward": 10,
+              "exercises": [
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'cho tôi xem thực đơn'", "answer": "Jídelní lístek, prosím", "hint": "J------ l------, p----" } },
+                { "type": "fillBlank", "vocabIds": ["cs_401","cs_403","cs_405","cs_407","cs_408"] }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a2_work",
+          "title": "Công Việc",
+          "icon": "💼",
+          "lessons": [
+            {
+              "id": "a2_work_vocabulary",
+              "title": "Từ Vựng: Công Việc",
+              "skill": "vocabulary",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_1001","cs_1002","cs_1003","cs_1004","cs_1005","cs_1006","cs_1007","cs_1008","cs_1009","cs_1010"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_1001","cs_1002","cs_1003","cs_1004","cs_1005","cs_1006","cs_1007","cs_1008","cs_1009","cs_1010"] },
+                { "type": "matching", "vocabIds": ["cs_1001","cs_1002","cs_1003","cs_1004","cs_1005","cs_1006","cs_1007","cs_1008","cs_1009","cs_1010"] }
+              ]
+            },
+            {
+              "id": "a2_work_grammar",
+              "title": "Ngữ Pháp: Cách 2 (Genitive)",
+              "skill": "grammar",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Cách 2 (Genitive)", "ruleVi": "Genitive diễn tả sở hữu, đi sau giới từ: do, z, od, bez...", "example": { "cs": "Jsem z Vietnamu.", "vi": "Tôi đến từ Việt Nam." }, "question": "Câu nào dùng genitive đúng?", "correctId": "z_viet", "explanation": "Giới từ 'z' (từ) đòi hỏi genitive: Vietnamu.", "options": [{ "id": "z_viet", "text": "Jsem z Vietnamu." }, { "id": "do_viet", "text": "Jdu do Vietnam." }, { "id": "ve_viet", "text": "Bydlím ve Vietnam." }] } },
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Genitive — sở hữu", "ruleVi": "Để nói 'của ai', dùng genitive: šéf firmy (giám đốc của công ty).", "example": { "cs": "Jméno kolegy je Pavel.", "vi": "Tên của đồng nghiệp là Pavel." }, "question": "Genitive của 'firma' (công ty) là?", "correctId": "firmy", "explanation": "firma (cái) → genitive: firmy.", "options": [{ "id": "firmy", "text": "firmy" }, { "id": "firmu", "text": "firmu" }, { "id": "firmě", "text": "firmě" }] } }
+              ]
+            },
+            {
+              "id": "a2_work_listening",
+              "title": "Nghe: Công Việc",
+              "skill": "listening",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "listening", "vocabIds": ["cs_1001","cs_1002","cs_1003","cs_1004","cs_1005"] },
+                { "type": "video", "vocabIds": [], "data": { "youtubeId": "dQw4w9WgXcQ", "title": "Phỏng Vấn Xin Việc", "level": "A2", "question": "Ứng viên ứng tuyển vị trí nào?", "correctId": "programator", "options": [{ "id": "programator", "text": "Lập trình viên" }, { "id": "ucitel", "text": "Giáo viên" }, { "id": "lekar", "text": "Bác sĩ" }] } }
+              ]
+            },
+            {
+              "id": "a2_work_speaking",
+              "title": "Nói: Công Việc",
+              "skill": "speaking",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "speaking", "vocabIds": ["cs_1001","cs_1002","cs_1003","cs_1004","cs_1005","cs_1006","cs_1007","cs_1008","cs_1009","cs_1010"] }
+              ]
+            },
+            {
+              "id": "a2_work_reading",
+              "title": "Đọc: Công Việc",
+              "skill": "reading",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_1001","cs_1002","cs_1003","cs_1004","cs_1005"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_1001","cs_1002","cs_1003","cs_1004","cs_1005"] },
+                { "type": "flashcard", "vocabIds": ["cs_1006","cs_1007","cs_1008","cs_1009","cs_1010"] },
+                { "type": "matching", "vocabIds": ["cs_1001","cs_1002","cs_1003","cs_1004","cs_1005"] },
+                { "type": "matching", "vocabIds": ["cs_1006","cs_1007","cs_1008","cs_1009","cs_1010"] },
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Cách 2 (Genitive)", "ruleVi": "Genitive diễn tả sở hữu, đi sau giới từ: do, z, od, bez...", "example": { "cs": "Jsem z Vietnamu.", "vi": "Tôi đến từ Việt Nam." }, "question": "Câu nào dùng genitive đúng?", "correctId": "z_viet", "explanation": "Giới từ 'z' (từ) đòi hỏi genitive: Vietnamu.", "options": [{ "id": "z_viet", "text": "Jsem z Vietnamu." }, { "id": "do_viet", "text": "Jdu do Vietnam." }, { "id": "ve_viet", "text": "Bydlím ve Vietnam." }] } }
+              ]
+            },
+            {
+              "id": "a2_work_writing",
+              "title": "Viết: Công Việc",
+              "skill": "writing",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'tôi làm việc tại công ty'", "answer": "Pracuji ve firmě", "hint": "P------ ve f----" } },
+                { "type": "fillBlank", "vocabIds": ["cs_1001","cs_1003","cs_1005","cs_1007","cs_1009"] }
               ]
             }
           ]
@@ -482,1567 +789,213 @@
       ]
     },
     {
-      "id": "unit4",
-      "title": "Gia Đình",
-      "subtitle": "Family",
-      "color": "bg-orange-500",
-      "darkColor": "bg-orange-600",
-      "icon": "👨‍👩‍👧",
-      "prerequisiteUnitId": "unit3",
-      "lessons": [
+      "id": "b1",
+      "name": "B1",
+      "title": "Trung cấp",
+      "topics": [
         {
-          "id": "u4l1",
-          "title": "Thành Viên Gia Đình",
-          "subtitle": "Bố mẹ, anh chị em",
-          "xpReward": 10,
-          "exercises": [
+          "id": "b1_travel",
+          "title": "Du Lịch",
+          "icon": "✈️",
+          "lessons": [
             {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_301",
-                "cs_302",
-                "cs_303",
-                "cs_304",
-                "cs_305",
-                "cs_306"
+              "id": "b1_travel_vocabulary",
+              "title": "Từ Vựng: Du Lịch",
+              "skill": "vocabulary",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_1101","cs_1102","cs_1103","cs_1104","cs_1105","cs_1106","cs_1107","cs_1108","cs_1109","cs_1110"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_1101","cs_1102","cs_1103","cs_1104","cs_1105","cs_1106","cs_1107","cs_1108","cs_1109","cs_1110"] },
+                { "type": "matching", "vocabIds": ["cs_1101","cs_1102","cs_1103","cs_1104","cs_1105","cs_1106","cs_1107","cs_1108","cs_1109","cs_1110"] }
               ]
             },
             {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_301",
-                "cs_302",
-                "cs_303",
-                "cs_304",
-                "cs_305",
-                "cs_306"
+              "id": "b1_travel_grammar",
+              "title": "Ngữ Pháp: Cách 6 (Locative)",
+              "skill": "grammar",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Cách 6 (Locative)", "ruleVi": "Locative dùng sau giới từ: v (trong), na (trên), o (về), po (sau). Không bao giờ đứng một mình.", "example": { "cs": "Bydlím v Praze.", "vi": "Tôi sống ở Praha. (Praha → Praze)" }, "question": "Câu nào dùng locative đúng?", "correctId": "v_hotelu", "explanation": "Sau giới từ 'v' → locative: hotel → hotelu.", "options": [{ "id": "v_hotelu", "text": "Bydlím v hotelu." }, { "id": "v_hotel", "text": "Bydlím v hotel." }, { "id": "do_hotelu", "text": "Bydlím do hotelu." }] } }
+              ]
+            },
+            {
+              "id": "b1_travel_listening",
+              "title": "Nghe: Du Lịch",
+              "skill": "listening",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "listening", "vocabIds": ["cs_1101","cs_1102","cs_1103","cs_1104","cs_1105"] },
+                { "type": "listening", "vocabIds": ["cs_1106","cs_1107","cs_1108","cs_1109","cs_1110"] }
+              ]
+            },
+            {
+              "id": "b1_travel_speaking",
+              "title": "Nói: Du Lịch",
+              "skill": "speaking",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "speaking", "vocabIds": ["cs_1101","cs_1102","cs_1103","cs_1104","cs_1105","cs_1106","cs_1107","cs_1108","cs_1109","cs_1110"] }
+              ]
+            },
+            {
+              "id": "b1_travel_reading",
+              "title": "Đọc: Du Lịch",
+              "skill": "reading",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_1101","cs_1102","cs_1103","cs_1104","cs_1105"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_1101","cs_1102","cs_1103","cs_1104","cs_1105"] },
+                { "type": "flashcard", "vocabIds": ["cs_1106","cs_1107","cs_1108","cs_1109","cs_1110"] },
+                { "type": "matching", "vocabIds": ["cs_1101","cs_1102","cs_1103","cs_1104","cs_1105"] },
+                { "type": "matching", "vocabIds": ["cs_1106","cs_1107","cs_1108","cs_1109","cs_1110"] },
+                { "type": "reading", "vocabIds": [], "data": { "passageCs": "Linh cestuje do Prahy poprvé. Na letišti si bere zavazadla a jde na celnici. Pak vezme taxi do hotelu. Hotel je blízko centra.", "passageVi": "Linh lần đầu đến Praha. Tại sân bay cô lấy hành lý và đi qua hải quan. Sau đó cô bắt taxi đến khách sạn gần trung tâm.", "questions": [{ "question": "Kde je hotel?", "questionVi": "Khách sạn ở đâu?", "correctId": "centrum", "options": [{ "id": "centrum", "text": "Blízko centra" }, { "id": "letiste", "text": "U letiště" }, { "id": "nadrazi", "text": "U nádraží" }] }] } }
+              ]
+            },
+            {
+              "id": "b1_travel_writing",
+              "title": "Viết: Du Lịch",
+              "skill": "writing",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'đặt phòng khách sạn'", "answer": "rezervace hotelu", "hint": "r-------- h----" } },
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'hộ chiếu'", "answer": "cestovní pas", "hint": "c------- p--" } },
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'sân bay'", "answer": "letiště", "hint": "l------" } },
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'check-in'", "answer": "odbavení", "hint": "o------" } }
               ]
             }
           ]
         },
         {
-          "id": "u4l2",
-          "title": "Gia Đình Mở Rộng",
-          "subtitle": "Vợ, chồng, con",
-          "xpReward": 10,
-          "exercises": [
+          "id": "b1_news",
+          "title": "Tin Tức",
+          "icon": "📰",
+          "lessons": [
             {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_307",
-                "cs_308",
-                "cs_309",
-                "cs_310"
+              "id": "b1_news_vocabulary",
+              "title": "Từ Vựng: Tin Tức",
+              "skill": "vocabulary",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_001","cs_003","cs_004","cs_201","cs_301","cs_401","cs_601","cs_701","cs_1001","cs_1101"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_001","cs_003","cs_004","cs_201","cs_301","cs_401","cs_601","cs_701"] },
+                { "type": "matching", "vocabIds": ["cs_001","cs_003","cs_004","cs_201","cs_301","cs_401","cs_601","cs_701"] }
               ]
             },
             {
-              "type": "matching",
-              "vocabIds": [
-                "cs_301",
-                "cs_302",
-                "cs_303",
-                "cs_304",
-                "cs_305"
+              "id": "b1_news_grammar",
+              "title": "Ngữ Pháp: Mệnh Đề Phức",
+              "skill": "grammar",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Mệnh đề phức với 'že' (rằng)", "ruleVi": "'Že' = rằng/là — dùng để nối mệnh đề chính với mệnh đề phụ.", "example": { "cs": "Vím, že Praha je krásná.", "vi": "Tôi biết rằng Praha rất đẹp." }, "question": "Hoàn thành câu: 'Říká, ___ přijede zítra.'", "correctId": "ze", "explanation": "'Že' nối mệnh đề chính với mệnh đề phụ.", "options": [{ "id": "ze", "text": "že" }, { "id": "kdo", "text": "kdo" }, { "id": "jak", "text": "jak" }, { "id": "kdy", "text": "kdy" }] } }
               ]
             },
             {
-              "type": "matching",
-              "vocabIds": [
-                "cs_306",
-                "cs_307",
-                "cs_308",
-                "cs_309",
-                "cs_310"
+              "id": "b1_news_listening",
+              "title": "Nghe: Tin Tức",
+              "skill": "listening",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "video", "vocabIds": [], "data": { "youtubeId": "dQw4w9WgXcQ", "title": "Tin Tức Chậm Tiếng Séc", "level": "B1", "question": "Chủ đề chính của bản tin là gì?", "correctId": "pocasi", "options": [{ "id": "pocasi", "text": "Thời tiết" }, { "id": "sport", "text": "Thể thao" }, { "id": "ekonomika", "text": "Kinh tế" }] } }
+              ]
+            },
+            {
+              "id": "b1_news_speaking",
+              "title": "Nói: Tin Tức",
+              "skill": "speaking",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "speaking", "vocabIds": ["cs_001","cs_003","cs_004","cs_201","cs_301","cs_401","cs_601","cs_701"] }
+              ]
+            },
+            {
+              "id": "b1_news_reading",
+              "title": "Đọc: Tin Tức",
+              "skill": "reading",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "reading", "vocabIds": [], "data": { "passageCs": "Česká republika je členem Evropské unie od roku 2004. Praha je hlavní město s více než milionem obyvatel. Česky mluví přibližně deset milionů lidí na světě.", "passageVi": "Cộng hòa Séc là thành viên EU từ năm 2004. Praha là thủ đô với hơn một triệu dân. Khoảng mười triệu người nói tiếng Séc.", "questions": [{ "question": "Od kdy je ČR členem EU?", "questionVi": "Séc gia nhập EU từ năm nào?", "correctId": "2004", "options": [{ "id": "2004", "text": "2004" }, { "id": "1993", "text": "1993" }, { "id": "1989", "text": "1989" }] }] } },
+                { "type": "multipleChoice", "vocabIds": ["cs_001","cs_003","cs_004","cs_201","cs_301","cs_401","cs_601","cs_701"] }
+              ]
+            },
+            {
+              "id": "b1_news_writing",
+              "title": "Viết: Tin Tức",
+              "skill": "writing",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'Cộng hòa Séc'", "answer": "Česká republika", "hint": "Č----- r-------" } },
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'thủ đô'", "answer": "hlavní město", "hint": "h----- m----" } }
               ]
             }
           ]
         },
         {
-          "id": "u4l3",
-          "title": "Đọc Hiểu: Gia Đình Séc",
-          "xpReward": 15,
-          "exercises": [
+          "id": "b1_culture",
+          "title": "Văn Hóa Séc",
+          "icon": "🏰",
+          "lessons": [
             {
-              "type": "reading",
-              "vocabIds": [],
-              "data": {
-                "passageCs": "Mám velkou rodinu. Moje matka se jmenuje Jana a otec se jmenuje Petr. Mám jednu sestru a dva bratry. Babička a dědeček bydlí v Brně.",
-                "passageVi": "Tôi có một gia đình lớn. Mẹ tôi tên là Jana và bố tôi tên là Petr. Tôi có một chị gái và hai anh trai. Bà và ông sống ở Brno.",
-                "questions": [
-                  {
-                    "id": "q1",
-                    "question": "Người kể chuyện có bao nhiêu anh chị em?",
-                    "options": [
-                      {
-                        "id": "a",
-                        "text": "1 chị, 1 anh"
-                      },
-                      {
-                        "id": "b",
-                        "text": "1 chị, 2 anh"
-                      },
-                      {
-                        "id": "c",
-                        "text": "2 chị, 1 anh"
-                      },
-                      {
-                        "id": "d",
-                        "text": "3 anh chị"
-                      }
-                    ],
-                    "correctId": "b"
-                  },
-                  {
-                    "id": "q2",
-                    "question": "Bà và ông sống ở đâu?",
-                    "options": [
-                      {
-                        "id": "a",
-                        "text": "Praha"
-                      },
-                      {
-                        "id": "b",
-                        "text": "Brno"
-                      },
-                      {
-                        "id": "c",
-                        "text": "Ostrava"
-                      },
-                      {
-                        "id": "d",
-                        "text": "Plzeň"
-                      }
-                    ],
-                    "correctId": "b"
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "unit5",
-      "title": "Đồ Ăn & Thức Uống",
-      "subtitle": "Food & Drinks",
-      "color": "bg-yellow-500",
-      "darkColor": "bg-yellow-600",
-      "icon": "🍽️",
-      "prerequisiteUnitId": "unit4",
-      "lessons": [
-        {
-          "id": "u5l1",
-          "title": "Thức Ăn Cơ Bản",
-          "subtitle": "Bánh mì, thịt, rau",
-          "xpReward": 10,
-          "exercises": [
-            {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_401",
-                "cs_402",
-                "cs_403",
-                "cs_404",
-                "cs_405",
-                "cs_406"
+              "id": "b1_culture_vocabulary",
+              "title": "Từ Vựng: Văn Hóa Séc",
+              "skill": "vocabulary",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "flashcard", "vocabIds": ["cs_1001","cs_1003","cs_1006","cs_1101","cs_1103","cs_1107"] },
+                { "type": "multipleChoice", "vocabIds": ["cs_001","cs_003","cs_201","cs_301","cs_401","cs_601","cs_701","cs_1001","cs_1101"] },
+                { "type": "matching", "vocabIds": ["cs_1001","cs_1003","cs_1006","cs_1101","cs_1103","cs_1107"] }
               ]
             },
             {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_401",
-                "cs_402",
-                "cs_403",
-                "cs_404",
-                "cs_405",
-                "cs_406"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u5l2",
-          "title": "Thực Phẩm Thêm",
-          "xpReward": 10,
-          "exercises": [
-            {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_407",
-                "cs_408",
-                "cs_409",
-                "cs_410"
+              "id": "b1_culture_grammar",
+              "title": "Ngữ Pháp: Ôn Tập Tổng Hợp",
+              "skill": "grammar",
+              "xpReward": 30,
+              "exercises": [
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Ôn tập tổng hợp", "ruleVi": "Ôn lại: Být, Accusative, Genitive, Thì quá khứ, Locative.", "example": { "cs": "Byl jsem v Praze a koupil jsem suvenýr.", "vi": "Tôi đã ở Praha và đã mua đồ lưu niệm." }, "question": "Câu nào đúng ngữ pháp?", "correctId": "correct", "explanation": "Quá khứ + genitive đúng: z Prahy.", "options": [{ "id": "correct", "text": "Jel jsem z Prahy do Brna." }, { "id": "wrong1", "text": "Jdu z Praha do Brno." }, { "id": "wrong2", "text": "Jsem jel Praha Brno." }] } },
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Ôn tổng hợp (2)", "ruleVi": "Kết hợp locative + genitive: 'v hotelu blízko centra' (trong khách sạn gần trung tâm).", "example": { "cs": "Bydlím v hotelu blízko centra Prahy.", "vi": "Tôi ở khách sạn gần trung tâm Praha." }, "question": "Câu nào dùng đúng cả locative và genitive?", "correctId": "v_centre", "explanation": "'v centru' (locative) + 'Prahy' (genitive).", "options": [{ "id": "v_centre", "text": "Jsem v centru Prahy." }, { "id": "do_centre", "text": "Jsem do centrum Praha." }, { "id": "na_centre", "text": "Jsem na centrum Prahy." }] } }
               ]
             },
             {
-              "type": "matching",
-              "vocabIds": [
-                "cs_401",
-                "cs_402",
-                "cs_403",
-                "cs_404",
-                "cs_405"
+              "id": "b1_culture_listening",
+              "title": "Nghe: Văn Hóa Séc",
+              "skill": "listening",
+              "xpReward": 15,
+              "exercises": [
+                { "type": "listening", "vocabIds": ["cs_1001","cs_1003","cs_1006","cs_1101","cs_1103","cs_1107"] }
               ]
             },
             {
-              "type": "matching",
-              "vocabIds": [
-                "cs_406",
-                "cs_407",
-                "cs_408",
-                "cs_409",
-                "cs_410"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u5l3",
-          "title": "Ngữ Pháp: Giới Tính Danh Từ",
-          "xpReward": 15,
-          "exercises": [
-            {
-              "type": "grammar",
-              "vocabIds": [],
-              "data": {
-                "ruleTitle": "Giới tính danh từ (род)",
-                "ruleVi": "Danh từ tiếng Séc có 3 giới tính:\n• Nam (masculine): muž, hrad, otec\n• Nữ (feminine): žena, matka, voda\n• Trung (neuter): město, mléko, dítě\n\nGiới tính ảnh hưởng đến đại từ và tính từ đi kèm.",
-                "example": {
-                  "cs": "Ten muž / Ta žena / To město",
-                  "vi": "Người đàn ông đó / Người phụ nữ đó / Thành phố đó"
-                },
-                "question": "\"Mléko\" (sữa) là danh từ giới tính gì?",
-                "options": [
-                  {
-                    "id": "a",
-                    "text": "Nam (masculine)"
-                  },
-                  {
-                    "id": "b",
-                    "text": "Nữ (feminine)"
-                  },
-                  {
-                    "id": "c",
-                    "text": "Trung (neuter)"
-                  },
-                  {
-                    "id": "d",
-                    "text": "Không xác định"
-                  }
-                ],
-                "correctId": "c",
-                "explanation": "\"Mléko\" kết thúc bằng -o → thường là trung tính (neuter). \"To mléko\" = sữa đó."
-              }
-            },
-            {
-              "type": "listening",
-              "vocabIds": [
-                "cs_401",
-                "cs_402",
-                "cs_403",
-                "cs_404",
-                "cs_405",
-                "cs_406",
-                "cs_407",
-                "cs_408"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u5l4",
-          "title": "Luyện Viết: Đồ Ăn",
-          "xpReward": 15,
-          "exercises": [
-            {
-              "type": "writing",
-              "vocabIds": [],
-              "data": {
-                "promptVi": "Nước (dạng từ đơn)",
-                "answer": "voda",
-                "hint": "Danh từ nữ tính, bắt đầu bằng v-"
-              }
-            },
-            {
-              "type": "writing",
-              "vocabIds": [],
-              "data": {
-                "promptVi": "Cà phê",
-                "answer": "káva",
-                "hint": "Danh từ nữ tính, 2 âm tiết"
-              }
-            },
-            {
-              "type": "writing",
-              "vocabIds": [],
-              "data": {
-                "promptVi": "Bia (tiếng Séc)",
-                "answer": "pivo",
-                "hint": "Danh từ trung tính, 2 âm tiết"
-              }
-            },
-            {
-              "type": "writing",
-              "vocabIds": [],
-              "data": {
-                "promptVi": "Bánh mì",
-                "answer": "chléb",
-                "hint": "Bắt đầu bằng \"chl-\""
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "unit6",
-      "title": "Thời Gian",
-      "subtitle": "Time & Dates",
-      "color": "bg-cyan-500",
-      "darkColor": "bg-cyan-600",
-      "icon": "🕐",
-      "prerequisiteUnitId": "unit5",
-      "lessons": [
-        {
-          "id": "u6l1",
-          "title": "Hôm Nay, Ngày Mai",
-          "subtitle": "Hôm nay, ngày mai, hôm qua",
-          "xpReward": 10,
-          "exercises": [
-            {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_501",
-                "cs_502",
-                "cs_503",
-                "cs_504",
-                "cs_505"
+              "id": "b1_culture_speaking",
+              "title": "Nói: Văn Hóa Séc",
+              "skill": "speaking",
+              "xpReward": 20,
+              "exercises": [
+                { "type": "speaking", "vocabIds": ["cs_001","cs_003","cs_201","cs_301","cs_401","cs_601","cs_701","cs_1001","cs_1101"] }
               ]
             },
             {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_501",
-                "cs_502",
-                "cs_503",
-                "cs_504",
-                "cs_505"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u6l2",
-          "title": "Tuần, Tháng, Năm",
-          "xpReward": 10,
-          "exercises": [
-            {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_506",
-                "cs_507",
-                "cs_508",
-                "cs_509",
-                "cs_510"
+              "id": "b1_culture_reading",
+              "title": "Đọc: Văn Hóa Séc",
+              "skill": "reading",
+              "xpReward": 30,
+              "exercises": [
+                { "type": "reading", "vocabIds": [], "data": { "passageCs": "Vánoce jsou nejdůležitější svátek v Česku. Slaví se 24. prosince – na Štědrý den. Rodina se sejde u stolu, kde je kapr a bramborový salát. Děti dostávají dárky od Ježíška.", "passageVi": "Giáng sinh là lễ hội quan trọng nhất ở Séc, tổ chức vào ngày 24 tháng 12. Gia đình quây quần bên bàn ăn với cá chép và salad khoai tây. Trẻ em nhận quà từ Chúa Hài đồng.", "questions": [{ "question": "Kdy se slaví Štědrý den?", "questionVi": "Đêm Giáng sinh là ngày bao nhiêu?", "correctId": "24", "options": [{ "id": "24", "text": "24. prosince" }, { "id": "25", "text": "25. prosince" }, { "id": "31", "text": "31. prosince" }] }] } },
+                { "type": "multipleChoice", "vocabIds": ["cs_001","cs_003","cs_004","cs_201","cs_301","cs_401","cs_601","cs_701"] },
+                { "type": "matching", "vocabIds": ["cs_1001","cs_1003","cs_1006","cs_1101","cs_1103","cs_1107"] },
+                { "type": "grammar", "vocabIds": [], "data": { "ruleTitle": "Ôn tập tổng hợp", "ruleVi": "Ôn lại: Být, Accusative, Genitive, Thì quá khứ.", "example": { "cs": "Byl jsem v Praze a koupil jsem suvenýr.", "vi": "Tôi đã ở Praha và đã mua đồ lưu niệm." }, "question": "Câu nào đúng ngữ pháp?", "correctId": "correct", "explanation": "Quá khứ + genitive đúng: z Prahy.", "options": [{ "id": "correct", "text": "Jel jsem z Prahy do Brna." }, { "id": "wrong1", "text": "Jdu z Praha do Brno." }, { "id": "wrong2", "text": "Jsem jel Praha Brno." }] } }
               ]
             },
             {
-              "type": "matching",
-              "vocabIds": [
-                "cs_501",
-                "cs_502",
-                "cs_503",
-                "cs_504",
-                "cs_505"
+              "id": "b1_culture_writing",
+              "title": "Viết: Văn Hóa Séc",
+              "skill": "writing",
+              "xpReward": 30,
+              "exercises": [
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'Giáng sinh'", "answer": "Vánoce", "hint": "V----e" } },
+                { "type": "writing", "vocabIds": [], "data": { "promptVi": "Viết tiếng Séc của 'lễ hội'", "answer": "svátek", "hint": "s----k" } },
+                { "type": "fillBlank", "vocabIds": ["cs_001","cs_003","cs_201","cs_301","cs_601","cs_1001"] }
               ]
-            },
-            {
-              "type": "matching",
-              "vocabIds": [
-                "cs_506",
-                "cs_507",
-                "cs_508",
-                "cs_509",
-                "cs_510"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u6l3",
-          "title": "Video: Cuộc Sống Praha",
-          "xpReward": 20,
-          "exercises": [
-            {
-              "type": "video",
-              "vocabIds": [],
-              "data": {
-                "youtubeId": "dQw4w9WgXcQ",
-                "title": "Cuộc sống ở Praha vlog",
-                "level": "A1",
-                "question": "Từ nào có nghĩa là \"hôm nay\" trong tiếng Séc?",
-                "options": [
-                  {
-                    "id": "a",
-                    "text": "zítra"
-                  },
-                  {
-                    "id": "b",
-                    "text": "dnes"
-                  },
-                  {
-                    "id": "c",
-                    "text": "včera"
-                  },
-                  {
-                    "id": "d",
-                    "text": "ráno"
-                  }
-                ],
-                "correctId": "b"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "unit7",
-      "title": "Mua Sắm",
-      "subtitle": "Shopping",
-      "color": "bg-rose-500",
-      "darkColor": "bg-rose-600",
-      "icon": "🛍️",
-      "prerequisiteUnitId": "unit6",
-      "lessons": [
-        {
-          "id": "u7l1",
-          "title": "Từ Vựng Mua Sắm",
-          "xpReward": 10,
-          "exercises": [
-            {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_601",
-                "cs_602",
-                "cs_603",
-                "cs_604",
-                "cs_605"
-              ]
-            },
-            {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_601",
-                "cs_602",
-                "cs_603",
-                "cs_604",
-                "cs_605"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u7l2",
-          "title": "Thanh Toán & Hóa Đơn",
-          "xpReward": 10,
-          "exercises": [
-            {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_606",
-                "cs_607",
-                "cs_608",
-                "cs_609",
-                "cs_610"
-              ]
-            },
-            {
-              "type": "matching",
-              "vocabIds": [
-                "cs_601",
-                "cs_602",
-                "cs_604",
-                "cs_605",
-                "cs_606"
-              ]
-            },
-            {
-              "type": "matching",
-              "vocabIds": [
-                "cs_607",
-                "cs_608",
-                "cs_609",
-                "cs_610"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u7l3",
-          "title": "Ngữ Pháp: Cách 4 (Accusative)",
-          "xpReward": 15,
-          "exercises": [
-            {
-              "type": "grammar",
-              "vocabIds": [],
-              "data": {
-                "ruleTitle": "Cách 4 — Accusative (Tân ngữ trực tiếp)",
-                "ruleVi": "Khi danh từ là đối tượng bị tác động, nó thay đổi dạng:\n• Nam sinh vật: vidím Petra\n• Nữ: žena → ženu (a→u)\n• Trung: vidím město (không đổi)\n\nVí dụ: Kupuji kávu. (Tôi mua cà phê.)",
-                "example": {
-                  "cs": "Kupuji chléb a mléko.",
-                  "vi": "Tôi mua bánh mì và sữa."
-                },
-                "question": "\"Vidím žena / ženu / ženy\" — dạng nào đúng khi nói \"Tôi thấy người phụ nữ\"?",
-                "options": [
-                  {
-                    "id": "a",
-                    "text": "Vidím žena."
-                  },
-                  {
-                    "id": "b",
-                    "text": "Vidím ženu."
-                  },
-                  {
-                    "id": "c",
-                    "text": "Vidím ženy."
-                  },
-                  {
-                    "id": "d",
-                    "text": "Vidím žene."
-                  }
-                ],
-                "correctId": "b",
-                "explanation": "Danh từ nữ tính, dạng Accusative: a → u. \"žena\" → \"ženu\"."
-              }
-            }
-          ]
-        },
-        {
-          "id": "u7l4",
-          "title": "Luyện Viết: Mua Sắm",
-          "xpReward": 15,
-          "exercises": [
-            {
-              "type": "writing",
-              "vocabIds": [],
-              "data": {
-                "promptVi": "Siêu thị",
-                "answer": "supermarket",
-                "hint": "Giống tiếng Anh!"
-              }
-            },
-            {
-              "type": "writing",
-              "vocabIds": [],
-              "data": {
-                "promptVi": "Giảm giá",
-                "answer": "sleva",
-                "hint": "Bắt đầu bằng \"sl-\""
-              }
-            },
-            {
-              "type": "writing",
-              "vocabIds": [],
-              "data": {
-                "promptVi": "Hóa đơn",
-                "answer": "účet",
-                "hint": "Bắt đầu bằng \"ú-\""
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "unit8",
-      "title": "Bệnh Viện",
-      "subtitle": "Health & Hospital",
-      "color": "bg-red-500",
-      "darkColor": "bg-red-600",
-      "icon": "🏥",
-      "prerequisiteUnitId": "unit7",
-      "lessons": [
-        {
-          "id": "u8l1",
-          "title": "Từ Vựng Sức Khỏe",
-          "xpReward": 10,
-          "exercises": [
-            {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_701",
-                "cs_702",
-                "cs_703",
-                "cs_704",
-                "cs_705"
-              ]
-            },
-            {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_701",
-                "cs_702",
-                "cs_703",
-                "cs_704",
-                "cs_705"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u8l2",
-          "title": "Đơn Thuốc & Bảo Hiểm",
-          "xpReward": 10,
-          "exercises": [
-            {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_706",
-                "cs_707",
-                "cs_708",
-                "cs_709",
-                "cs_710"
-              ]
-            },
-            {
-              "type": "matching",
-              "vocabIds": [
-                "cs_701",
-                "cs_702",
-                "cs_703",
-                "cs_704",
-                "cs_705"
-              ]
-            },
-            {
-              "type": "matching",
-              "vocabIds": [
-                "cs_706",
-                "cs_707",
-                "cs_708",
-                "cs_709",
-                "cs_710"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u8l3",
-          "title": "Đọc Hiểu: Tại Phòng Khám",
-          "xpReward": 15,
-          "exercises": [
-            {
-              "type": "reading",
-              "vocabIds": [],
-              "data": {
-                "passageCs": "Dobrý den, doktore. Bolí mě hlava a mám horečku. Jsem alergický na penicilin. Potřebuji recept na lék, prosím.",
-                "passageVi": "Xin chào bác sĩ. Tôi bị đau đầu và sốt. Tôi bị dị ứng với penicillin. Tôi cần đơn thuốc, làm ơn.",
-                "questions": [
-                  {
-                    "id": "q1",
-                    "question": "Bệnh nhân bị dị ứng với gì?",
-                    "options": [
-                      {
-                        "id": "a",
-                        "text": "Aspirin"
-                      },
-                      {
-                        "id": "b",
-                        "text": "Penicillin"
-                      },
-                      {
-                        "id": "c",
-                        "text": "Ibuprofen"
-                      },
-                      {
-                        "id": "d",
-                        "text": "Không bị dị ứng"
-                      }
-                    ],
-                    "correctId": "b"
-                  },
-                  {
-                    "id": "q2",
-                    "question": "Bệnh nhân cần gì từ bác sĩ?",
-                    "options": [
-                      {
-                        "id": "a",
-                        "text": "Xét nghiệm máu"
-                      },
-                      {
-                        "id": "b",
-                        "text": "Nằm viện"
-                      },
-                      {
-                        "id": "c",
-                        "text": "Đơn thuốc"
-                      },
-                      {
-                        "id": "d",
-                        "text": "Siêu âm"
-                      }
-                    ],
-                    "correctId": "c"
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "unit9",
-      "title": "Giao Thông",
-      "subtitle": "Transport",
-      "color": "bg-blue-500",
-      "darkColor": "bg-blue-600",
-      "icon": "🚇",
-      "prerequisiteUnitId": "unit8",
-      "lessons": [
-        {
-          "id": "u9l1",
-          "title": "Phương Tiện Di Chuyển",
-          "xpReward": 10,
-          "exercises": [
-            {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_801",
-                "cs_802",
-                "cs_803",
-                "cs_804",
-                "cs_805"
-              ]
-            },
-            {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_801",
-                "cs_802",
-                "cs_803",
-                "cs_804",
-                "cs_805"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u9l2",
-          "title": "Vé & Bến Xe",
-          "xpReward": 10,
-          "exercises": [
-            {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_806",
-                "cs_807",
-                "cs_808",
-                "cs_809",
-                "cs_810"
-              ]
-            },
-            {
-              "type": "matching",
-              "vocabIds": [
-                "cs_801",
-                "cs_802",
-                "cs_803",
-                "cs_804",
-                "cs_805"
-              ]
-            },
-            {
-              "type": "fillBlank",
-              "vocabIds": [
-                "cs_806",
-                "cs_807",
-                "cs_808",
-                "cs_809",
-                "cs_810"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u9l3",
-          "title": "Ngữ Pháp: Thì Quá Khứ",
-          "xpReward": 15,
-          "exercises": [
-            {
-              "type": "grammar",
-              "vocabIds": [],
-              "data": {
-                "ruleTitle": "Thì quá khứ (l-participle)",
-                "ruleVi": "Quá khứ = trợ động từ być + dạng l-participle:\n• Tôi (nam) đã làm: já jsem dělal\n• Tôi (nữ) đã làm: já jsem dělala\n• Anh ấy: on dělal (không cần trợ)\n• Cô ấy: ona dělala\n• Chúng tôi: my jsme dělali",
-                "example": {
-                  "cs": "Včera jsem jel metrem.",
-                  "vi": "Hôm qua tôi đi metro."
-                },
-                "question": "Cách nói \"Hôm qua tôi (nam) đã đi tàu\" là?",
-                "options": [
-                  {
-                    "id": "a",
-                    "text": "Včera jel jsem vlak."
-                  },
-                  {
-                    "id": "b",
-                    "text": "Včera jsem jel vlak."
-                  },
-                  {
-                    "id": "c",
-                    "text": "Včera jsem jela vlak."
-                  },
-                  {
-                    "id": "d",
-                    "text": "Včera jsem jet vlak."
-                  }
-                ],
-                "correctId": "b",
-                "explanation": "Thì quá khứ ngôi 1 (nam): \"jsem\" + l-participle nam \"jel\". \"jela\" là dạng nữ."
-              }
-            }
-          ]
-        },
-        {
-          "id": "u9l4",
-          "title": "Luyện Nói: Giao Thông",
-          "xpReward": 20,
-          "exercises": [
-            {
-              "type": "speaking",
-              "vocabIds": [
-                "cs_801",
-                "cs_802",
-                "cs_803",
-                "cs_804",
-                "cs_805",
-                "cs_806",
-                "cs_807"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "unit10",
-      "title": "Nhà Hàng",
-      "subtitle": "Restaurant",
-      "color": "bg-amber-500",
-      "darkColor": "bg-amber-600",
-      "icon": "🍴",
-      "prerequisiteUnitId": "unit9",
-      "lessons": [
-        {
-          "id": "u10l1",
-          "title": "Gọi Món",
-          "xpReward": 10,
-          "exercises": [
-            {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_401",
-                "cs_403",
-                "cs_404",
-                "cs_405",
-                "cs_407",
-                "cs_408",
-                "cs_409",
-                "cs_410"
-              ]
-            },
-            {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_401",
-                "cs_403",
-                "cs_404",
-                "cs_405",
-                "cs_406",
-                "cs_407"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u10l2",
-          "title": "Video: Nhà Hàng Séc",
-          "xpReward": 15,
-          "exercises": [
-            {
-              "type": "video",
-              "vocabIds": [],
-              "data": {
-                "youtubeId": "dQw4w9WgXcQ",
-                "title": "Đi nhà hàng — gọi món tiếng Séc",
-                "level": "A2",
-                "question": "Câu hỏi \"Kolik to stojí?\" có nghĩa là gì?",
-                "options": [
-                  {
-                    "id": "a",
-                    "text": "Bạn muốn gọi gì?"
-                  },
-                  {
-                    "id": "b",
-                    "text": "Cái này giá bao nhiêu?"
-                  },
-                  {
-                    "id": "c",
-                    "text": "Bữa ăn ngon không?"
-                  },
-                  {
-                    "id": "d",
-                    "text": "Nhà hàng mở cửa chưa?"
-                  }
-                ],
-                "correctId": "b"
-              }
-            }
-          ]
-        },
-        {
-          "id": "u10l3",
-          "title": "Đọc Hiểu: Menu",
-          "xpReward": 15,
-          "exercises": [
-            {
-              "type": "reading",
-              "vocabIds": [],
-              "data": {
-                "passageCs": "Dobrý den! Co si dáte? Dám si polévku a svíčkovou. A k pití? Jedno pivo, prosím. Něco k dezert? Ne, děkuji. Zaplatím kartou.",
-                "passageVi": "Xin chào! Bạn muốn gọi gì? Tôi gọi súp và thịt bò nước sốt. Còn đồ uống? Một bia, làm ơn. Có muốn tráng miệng không? Không, cảm ơn. Tôi trả bằng thẻ.",
-                "questions": [
-                  {
-                    "id": "q1",
-                    "question": "Khách gọi đồ uống gì?",
-                    "options": [
-                      {
-                        "id": "a",
-                        "text": "Trà"
-                      },
-                      {
-                        "id": "b",
-                        "text": "Nước"
-                      },
-                      {
-                        "id": "c",
-                        "text": "Bia"
-                      },
-                      {
-                        "id": "d",
-                        "text": "Cà phê"
-                      }
-                    ],
-                    "correctId": "c"
-                  },
-                  {
-                    "id": "q2",
-                    "question": "Khách trả tiền bằng cách nào?",
-                    "options": [
-                      {
-                        "id": "a",
-                        "text": "Tiền mặt"
-                      },
-                      {
-                        "id": "b",
-                        "text": "Thẻ"
-                      },
-                      {
-                        "id": "c",
-                        "text": "Điện thoại"
-                      },
-                      {
-                        "id": "d",
-                        "text": "Chưa trả"
-                      }
-                    ],
-                    "correctId": "b"
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "unit11",
-      "title": "Công Việc",
-      "subtitle": "Work & Career",
-      "color": "bg-indigo-500",
-      "darkColor": "bg-indigo-600",
-      "icon": "💼",
-      "prerequisiteUnitId": "unit10",
-      "lessons": [
-        {
-          "id": "u11l1",
-          "title": "Từ Vựng Công Sở",
-          "xpReward": 15,
-          "exercises": [
-            {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_1001",
-                "cs_1002",
-                "cs_1003",
-                "cs_1004",
-                "cs_1005"
-              ]
-            },
-            {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_1001",
-                "cs_1002",
-                "cs_1003",
-                "cs_1004",
-                "cs_1005"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u11l2",
-          "title": "Môi Trường Làm Việc",
-          "xpReward": 15,
-          "exercises": [
-            {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_1006",
-                "cs_1007",
-                "cs_1008",
-                "cs_1009",
-                "cs_1010"
-              ]
-            },
-            {
-              "type": "matching",
-              "vocabIds": [
-                "cs_1001",
-                "cs_1002",
-                "cs_1003",
-                "cs_1004",
-                "cs_1005"
-              ]
-            },
-            {
-              "type": "matching",
-              "vocabIds": [
-                "cs_1006",
-                "cs_1007",
-                "cs_1008",
-                "cs_1009",
-                "cs_1010"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u11l3",
-          "title": "Video: Phỏng Vấn Xin Việc",
-          "xpReward": 20,
-          "exercises": [
-            {
-              "type": "video",
-              "vocabIds": [],
-              "data": {
-                "youtubeId": "dQw4w9WgXcQ",
-                "title": "Phỏng vấn xin việc bằng tiếng Séc",
-                "level": "B1",
-                "question": "\"Životopis\" trong tiếng Séc có nghĩa là gì?",
-                "options": [
-                  {
-                    "id": "a",
-                    "text": "Hợp đồng lao động"
-                  },
-                  {
-                    "id": "b",
-                    "text": "CV / Sơ yếu lý lịch"
-                  },
-                  {
-                    "id": "c",
-                    "text": "Bảng lương"
-                  },
-                  {
-                    "id": "d",
-                    "text": "Thư xin việc"
-                  }
-                ],
-                "correctId": "b"
-              }
-            }
-          ]
-        },
-        {
-          "id": "u11l4",
-          "title": "Ngữ Pháp: Cách 2 (Genitive)",
-          "xpReward": 20,
-          "exercises": [
-            {
-              "type": "grammar",
-              "vocabIds": [],
-              "data": {
-                "ruleTitle": "Cách 2 — Genitive (Sở hữu & Phủ định)",
-                "ruleVi": "Genitive dùng để:\n1. Sở hữu: \"sách của Peter\" = \"kniha Petra\"\n2. Phủ định: \"nemám čas\" (không có thời gian)\n3. Sau giới từ: bez (không có), do (vào), z (từ), od (từ người)\n\n\"Nemám peněz.\" = Tôi không có tiền.",
-                "example": {
-                  "cs": "Jdu do práce bez kabátu.",
-                  "vi": "Tôi đi làm không mặc áo khoác."
-                },
-                "question": "\"Bez práce\" có nghĩa là gì?",
-                "options": [
-                  {
-                    "id": "a",
-                    "text": "Có công việc"
-                  },
-                  {
-                    "id": "b",
-                    "text": "Không có công việc"
-                  },
-                  {
-                    "id": "c",
-                    "text": "Đi làm"
-                  },
-                  {
-                    "id": "d",
-                    "text": "Từ công ty"
-                  }
-                ],
-                "correctId": "b",
-                "explanation": "\"Bez\" + Genitive = không có. \"Bez práce\" = không có công việc."
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "unit12",
-      "title": "Du Lịch",
-      "subtitle": "Travel & Tourism",
-      "color": "bg-teal-500",
-      "darkColor": "bg-teal-600",
-      "icon": "✈️",
-      "prerequisiteUnitId": "unit11",
-      "lessons": [
-        {
-          "id": "u12l1",
-          "title": "Từ Vựng Du Lịch",
-          "xpReward": 15,
-          "exercises": [
-            {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_1101",
-                "cs_1102",
-                "cs_1103",
-                "cs_1104",
-                "cs_1105"
-              ]
-            },
-            {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_1101",
-                "cs_1102",
-                "cs_1103",
-                "cs_1104",
-                "cs_1105"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u12l2",
-          "title": "Hộ Chiếu & Đặt Phòng",
-          "xpReward": 15,
-          "exercises": [
-            {
-              "type": "flashcard",
-              "vocabIds": [
-                "cs_1106",
-                "cs_1107",
-                "cs_1108",
-                "cs_1109",
-                "cs_1110"
-              ]
-            },
-            {
-              "type": "matching",
-              "vocabIds": [
-                "cs_1101",
-                "cs_1102",
-                "cs_1103",
-                "cs_1104",
-                "cs_1105"
-              ]
-            },
-            {
-              "type": "matching",
-              "vocabIds": [
-                "cs_1106",
-                "cs_1107",
-                "cs_1108",
-                "cs_1109",
-                "cs_1110"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "u12l3",
-          "title": "Đọc Hiểu: Chuyến Đi Praha",
-          "xpReward": 20,
-          "exercises": [
-            {
-              "type": "reading",
-              "vocabIds": [],
-              "data": {
-                "passageCs": "Praha je krásné město. Každý rok přijedou miliony turistů. Mohou navštívit Pražský hrad, Karlův most a Staroměstské náměstí. Nezapomeňte si koupit mapu a jízdenku na metro.",
-                "passageVi": "Praha là một thành phố đẹp. Mỗi năm hàng triệu khách du lịch đến thăm. Họ có thể tham quan Lâu đài Praha, Cầu Charles và Quảng trường Thành phố Cổ. Đừng quên mua bản đồ và vé metro.",
-                "questions": [
-                  {
-                    "id": "q1",
-                    "question": "\"Karlův most\" là gì?",
-                    "options": [
-                      {
-                        "id": "a",
-                        "text": "Lâu đài Praha"
-                      },
-                      {
-                        "id": "b",
-                        "text": "Cầu Charles"
-                      },
-                      {
-                        "id": "c",
-                        "text": "Quảng trường Cổ"
-                      },
-                      {
-                        "id": "d",
-                        "text": "Nhà thờ lớn"
-                      }
-                    ],
-                    "correctId": "b"
-                  },
-                  {
-                    "id": "q2",
-                    "question": "Bài khuyên du khách nên mua gì?",
-                    "options": [
-                      {
-                        "id": "a",
-                        "text": "Bản đồ và vé metro"
-                      },
-                      {
-                        "id": "b",
-                        "text": "Quà lưu niệm"
-                      },
-                      {
-                        "id": "c",
-                        "text": "Vé máy bay"
-                      },
-                      {
-                        "id": "d",
-                        "text": "Thẻ bảo hiểm"
-                      }
-                    ],
-                    "correctId": "a"
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "id": "u12l4",
-          "title": "Luyện Viết: Du Lịch",
-          "xpReward": 20,
-          "exercises": [
-            {
-              "type": "writing",
-              "vocabIds": [],
-              "data": {
-                "promptVi": "Hộ chiếu",
-                "answer": "pas",
-                "hint": "Từ ngắn 3 chữ cái"
-              }
-            },
-            {
-              "type": "writing",
-              "vocabIds": [],
-              "data": {
-                "promptVi": "Bản đồ",
-                "answer": "mapa",
-                "hint": "Giống tiếng Anh \"map\""
-              }
-            },
-            {
-              "type": "writing",
-              "vocabIds": [],
-              "data": {
-                "promptVi": "Khách sạn",
-                "answer": "hotel",
-                "hint": "Giống tiếng Anh \"hotel\""
-              }
-            },
-            {
-              "type": "writing",
-              "vocabIds": [],
-              "data": {
-                "promptVi": "Đặt chỗ / đặt phòng",
-                "answer": "rezervace",
-                "hint": "Gốc từ \"reservation\""
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "unit13",
-      "title": "Tin Tức",
-      "subtitle": "News & Media",
-      "color": "bg-slate-600",
-      "darkColor": "bg-slate-700",
-      "icon": "📰",
-      "prerequisiteUnitId": "unit12",
-      "lessons": [
-        {
-          "id": "u13l1",
-          "title": "Video: Tin Tức Chậm",
-          "xpReward": 20,
-          "exercises": [
-            {
-              "type": "video",
-              "vocabIds": [],
-              "data": {
-                "youtubeId": "dQw4w9WgXcQ",
-                "title": "Tin tức Séc — đọc chậm",
-                "level": "B1",
-                "question": "\"Zprávy\" trong tiếng Séc có nghĩa là gì?",
-                "options": [
-                  {
-                    "id": "a",
-                    "text": "Thời tiết"
-                  },
-                  {
-                    "id": "b",
-                    "text": "Tin tức"
-                  },
-                  {
-                    "id": "c",
-                    "text": "Thể thao"
-                  },
-                  {
-                    "id": "d",
-                    "text": "Lịch sử"
-                  }
-                ],
-                "correctId": "b"
-              }
-            }
-          ]
-        },
-        {
-          "id": "u13l2",
-          "title": "Đọc Hiểu: Thời Sự B1",
-          "xpReward": 20,
-          "exercises": [
-            {
-              "type": "reading",
-              "vocabIds": [],
-              "data": {
-                "passageCs": "Česká republika je členem Evropské unie od roku 2004. Hlavní město Praha má asi 1,3 milionu obyvatel. Česko je známé svým pivem, architekturou a sportem, zejména hokejem a fotbalem.",
-                "passageVi": "Cộng hòa Séc là thành viên của Liên minh châu Âu từ năm 2004. Thủ đô Praha có khoảng 1,3 triệu dân. Séc nổi tiếng với bia, kiến trúc và thể thao, đặc biệt là khúc côn cầu và bóng đá.",
-                "questions": [
-                  {
-                    "id": "q1",
-                    "question": "Séc gia nhập EU năm nào?",
-                    "options": [
-                      {
-                        "id": "a",
-                        "text": "1999"
-                      },
-                      {
-                        "id": "b",
-                        "text": "2002"
-                      },
-                      {
-                        "id": "c",
-                        "text": "2004"
-                      },
-                      {
-                        "id": "d",
-                        "text": "2007"
-                      }
-                    ],
-                    "correctId": "c"
-                  },
-                  {
-                    "id": "q2",
-                    "question": "Séc đặc biệt nổi tiếng với môn thể thao nào?",
-                    "options": [
-                      {
-                        "id": "a",
-                        "text": "Quần vợt"
-                      },
-                      {
-                        "id": "b",
-                        "text": "Khúc côn cầu và bóng đá"
-                      },
-                      {
-                        "id": "c",
-                        "text": "Bóng rổ"
-                      },
-                      {
-                        "id": "d",
-                        "text": "Bơi lội"
-                      }
-                    ],
-                    "correctId": "b"
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "unit14",
-      "title": "Văn Hóa Séc",
-      "subtitle": "Czech Culture",
-      "color": "bg-purple-500",
-      "darkColor": "bg-purple-600",
-      "icon": "🏰",
-      "prerequisiteUnitId": "unit13",
-      "lessons": [
-        {
-          "id": "u14l1",
-          "title": "Phong Tục & Lễ Hội",
-          "xpReward": 15,
-          "exercises": [
-            {
-              "type": "reading",
-              "vocabIds": [],
-              "data": {
-                "passageCs": "Vánoce jsou nejvýznamnější svátky v Česku. Slaví se 24. prosince večer. Rodina se sejde u vánočního stromečku a vyměňuje dárky. Tradiční jídlo je kapr se zelím a bramborovým salátem.",
-                "passageVi": "Giáng sinh là lễ hội quan trọng nhất ở Séc. Được tổ chức vào tối ngày 24 tháng 12. Gia đình quây quần bên cây thông Noel và trao quà. Món ăn truyền thống là cá chép với bắp cải và salad khoai tây.",
-                "questions": [
-                  {
-                    "id": "q1",
-                    "question": "Giáng sinh ở Séc được tổ chức vào ngày nào?",
-                    "options": [
-                      {
-                        "id": "a",
-                        "text": "25/12 sáng"
-                      },
-                      {
-                        "id": "b",
-                        "text": "24/12 tối"
-                      },
-                      {
-                        "id": "c",
-                        "text": "26/12"
-                      },
-                      {
-                        "id": "d",
-                        "text": "31/12"
-                      }
-                    ],
-                    "correctId": "b"
-                  },
-                  {
-                    "id": "q2",
-                    "question": "Món ăn truyền thống Giáng sinh ở Séc là gì?",
-                    "options": [
-                      {
-                        "id": "a",
-                        "text": "Gà quay"
-                      },
-                      {
-                        "id": "b",
-                        "text": "Cá chép với bắp cải"
-                      },
-                      {
-                        "id": "c",
-                        "text": "Vịt quay"
-                      },
-                      {
-                        "id": "d",
-                        "text": "Bánh mì xúc xích"
-                      }
-                    ],
-                    "correctId": "b"
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "id": "u14l2",
-          "title": "Ôn Tập Toàn Bộ",
-          "xpReward": 30,
-          "exercises": [
-            {
-              "type": "multipleChoice",
-              "vocabIds": [
-                "cs_001",
-                "cs_003",
-                "cs_004",
-                "cs_201",
-                "cs_301",
-                "cs_401",
-                "cs_601",
-                "cs_701"
-              ]
-            },
-            {
-              "type": "matching",
-              "vocabIds": [
-                "cs_1001",
-                "cs_1003",
-                "cs_1006",
-                "cs_1101",
-                "cs_1103",
-                "cs_1107"
-              ]
-            },
-            {
-              "type": "grammar",
-              "vocabIds": [],
-              "data": {
-                "ruleTitle": "Ôn Tập: Các Cách Chính",
-                "ruleVi": "Tóm tắt 4 cách đã học:\n• Nominative (Cách 1): chủ ngữ\n• Accusative (Cách 4): tân ngữ trực tiếp\n• Genitive (Cách 2): sở hữu, phủ định, sau bez/do/z/od\n\nVí dụ: Matka (1) kupuje mléko (4) bez cukru (2).",
-                "example": {
-                  "cs": "Mám ráda Prahu bez turistů.",
-                  "vi": "Tôi thích Praha không có khách du lịch."
-                },
-                "question": "\"Jdu do práce\" — \"práce\" đang ở cách nào?",
-                "options": [
-                  {
-                    "id": "a",
-                    "text": "Cách 1 (Nominative)"
-                  },
-                  {
-                    "id": "b",
-                    "text": "Cách 2 (Genitive)"
-                  },
-                  {
-                    "id": "c",
-                    "text": "Cách 4 (Accusative)"
-                  },
-                  {
-                    "id": "d",
-                    "text": "Cách 6 (Locative)"
-                  }
-                ],
-                "correctId": "b",
-                "explanation": "Giới từ \"do\" luôn đi với Genitive (Cách 2). \"práce\" → dạng Genitive sau \"do\"."
-              }
             }
           ]
         }

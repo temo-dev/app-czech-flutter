@@ -38,11 +38,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final notifier = ref.read(progressProvider.notifier);
     final goalPct = (user.todayXP / user.dailyGoalXP).clamp(0.0, 1.0);
 
-    final allLessons = <({Lesson lesson, Unit unit, int unitIndex})>[];
-    for (int ui = 0; ui < repo.course.units.length; ui++) {
-      final unit = repo.course.units[ui];
-      for (final lesson in unit.lessons) {
-        allLessons.add((lesson: lesson, unit: unit, unitIndex: ui));
+    // Flatten: Level > Topic > Lesson
+    final allLessons = <({Lesson lesson, Topic topic, int levelIndex})>[];
+    for (int li = 0; li < repo.course.levels.length; li++) {
+      final level = repo.course.levels[li];
+      for (final topic in level.topics) {
+        for (final lesson in topic.lessons) {
+          allLessons.add((lesson: lesson, topic: topic, levelIndex: li));
+        }
       }
     }
 
@@ -56,6 +59,15 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       if (idx < 0) idx = 0;
       const cardWidth = 164.0;
       _carouselController = ScrollController(initialScrollOffset: idx * cardWidth);
+    }
+
+    // All topics for the grid
+    final allTopics = <({Topic topic, Level level, int levelIndex})>[];
+    for (int li = 0; li < repo.course.levels.length; li++) {
+      final level = repo.course.levels[li];
+      for (final topic in level.topics) {
+        allTopics.add((topic: topic, level: level, levelIndex: li));
+      }
     }
 
     return Scaffold(
@@ -99,7 +111,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         ),
                       ),
                       const SizedBox(width: 8),
-                      // XP badge
                       GestureDetector(
                         onTap: () => context.go('/profile'),
                         child: Container(
@@ -166,14 +177,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       itemCount: allLessons.length,
                       itemBuilder: (context, i) {
                         final item = allLessons[i];
-                        final unlocked = ref.read(progressProvider.notifier).isLessonUnlocked(item.lesson.id);
+                        final unlocked = notifier.isLessonUnlocked(item.lesson.id);
                         final done = progress.completedLessonIds.contains(item.lesson.id);
                         final stars = progress.lessonStars[item.lesson.id] ?? 0;
-                        final colors = _cardColors[item.unitIndex % _cardColors.length];
+                        final colors = _cardColors[item.levelIndex % _cardColors.length];
 
                         return _LessonCard(
                           lesson: item.lesson,
-                          unit: item.unit,
+                          topic: item.topic,
                           unlocked: unlocked,
                           done: done,
                           stars: stars,
@@ -190,11 +201,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             ),
           ),
 
-          // Units grid
+          // Topics grid
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(20, 24, 20, 8),
-              child: const Text('ĐƠN VỊ HỌC', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: AppColors.textMuted, letterSpacing: 1.5)),
+              child: const Text('CHỦ ĐỀ', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: AppColors.textMuted, letterSpacing: 1.5)),
             ),
           ),
           SliverPadding(
@@ -208,12 +219,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
               delegate: SliverChildBuilderDelegate(
                 (context, i) {
-                  final unit = repo.course.units[i];
-                  final prog = ref.read(progressProvider.notifier).getUnitProgress(unit.id);
-                  return _UnitCard(unit: unit, completed: prog.completed, total: prog.total)
-                      .animate().fadeIn(delay: (i * 80).ms).scale(begin: const Offset(0.9, 0.9));
+                  final item = allTopics[i];
+                  final prog = notifier.getTopicProgress(item.topic.id);
+                  return _TopicCard(
+                    topic: item.topic,
+                    level: item.level,
+                    completed: prog.completed,
+                    total: prog.total,
+                  ).animate().fadeIn(delay: (i * 80).ms).scale(begin: const Offset(0.9, 0.9));
                 },
-                childCount: repo.course.units.length,
+                childCount: allTopics.length,
               ),
             ),
           ),
@@ -225,7 +240,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
 class _LessonCard extends StatelessWidget {
   final Lesson lesson;
-  final Unit unit;
+  final Topic topic;
   final bool unlocked;
   final bool done;
   final int stars;
@@ -236,7 +251,7 @@ class _LessonCard extends StatelessWidget {
 
   const _LessonCard({
     required this.lesson,
-    required this.unit,
+    required this.topic,
     required this.unlocked,
     required this.done,
     required this.stars,
@@ -265,7 +280,7 @@ class _LessonCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(unit.icon, style: const TextStyle(fontSize: 24)),
+                Text(topic.icon, style: const TextStyle(fontSize: 24)),
                 if (!unlocked)
                   const Icon(Icons.lock_outline, size: 16, color: AppColors.textMuted)
                 else if (done)
@@ -278,20 +293,11 @@ class _LessonCard extends StatelessWidget {
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
-                fontSize: 14,
+                fontSize: 13,
                 fontWeight: FontWeight.w700,
                 color: unlocked ? textColor : AppColors.textMuted,
               ),
             ),
-            if (lesson.subtitle != null) ...[
-              const SizedBox(height: 2),
-              Text(
-                lesson.subtitle!,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 11, color: unlocked ? subColor : AppColors.textLight),
-              ),
-            ],
             const SizedBox(height: 6),
             Row(
               children: [
@@ -314,12 +320,18 @@ class _LessonCard extends StatelessWidget {
   }
 }
 
-class _UnitCard extends StatelessWidget {
-  final Unit unit;
+class _TopicCard extends StatelessWidget {
+  final Topic topic;
+  final Level level;
   final int completed;
   final int total;
 
-  const _UnitCard({required this.unit, required this.completed, required this.total});
+  const _TopicCard({
+    required this.topic,
+    required this.level,
+    required this.completed,
+    required this.total,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -335,9 +347,22 @@ class _UnitCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(unit.icon, style: const TextStyle(fontSize: 24)),
+            Row(
+              children: [
+                Text(topic.icon, style: const TextStyle(fontSize: 22)),
+                const Spacer(),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: AppColors.cream,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(level.name, style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w700, color: AppColors.textMuted)),
+                ),
+              ],
+            ),
             const Spacer(),
-            Text(unit.title, maxLines: 1, overflow: TextOverflow.ellipsis,
+            Text(topic.title, maxLines: 1, overflow: TextOverflow.ellipsis,
                 style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: AppColors.textDark)),
             const SizedBox(height: 4),
             ClipRRect(

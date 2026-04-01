@@ -6,57 +6,164 @@ import '../../core/theme/app_colors.dart';
 import '../../data/models/content.dart';
 import '../../state/progress/progress_notifier.dart';
 
-class CourseMapScreen extends ConsumerWidget {
+const _skillColors = {
+  SkillType.vocabulary: Color(0xFFDC2626),
+  SkillType.grammar:    Color(0xFF0891B2),
+  SkillType.listening:  Color(0xFF0284C7),
+  SkillType.speaking:   Color(0xFF7C3AED),
+  SkillType.reading:    Color(0xFF059669),
+  SkillType.writing:    Color(0xFFD97706),
+};
+
+const _skillBgColors = {
+  SkillType.vocabulary: Color(0xFFFEE2E2),
+  SkillType.grammar:    Color(0xFFCFFAFE),
+  SkillType.listening:  Color(0xFFE0F2FE),
+  SkillType.speaking:   Color(0xFFEDE9FE),
+  SkillType.reading:    Color(0xFFD1FAE5),
+  SkillType.writing:    Color(0xFFFEF3C7),
+};
+
+class CourseMapScreen extends ConsumerStatefulWidget {
   const CourseMapScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<CourseMapScreen> createState() => _CourseMapScreenState();
+}
+
+class _CourseMapScreenState extends ConsumerState<CourseMapScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
     final repo = ref.read(curriculumRepositoryProvider);
-    final progress = ref.watch(progressProvider);
+    _tabController = TabController(
+      length: repo.course.levels.length,
+      vsync: this,
+    );
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final repo = ref.read(curriculumRepositoryProvider);
+    final levels = repo.course.levels;
 
     return Scaffold(
       backgroundColor: AppColors.bg,
-      body: CustomScrollView(
-        slivers: [
+      body: NestedScrollView(
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
           SliverAppBar(
             backgroundColor: AppColors.white,
             title: const Text('Khóa học'),
             pinned: true,
             elevation: 0,
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(1),
-              child: Container(height: 1, color: AppColors.border),
-            ),
-          ),
-          SliverPadding(
-            padding: const EdgeInsets.fromLTRB(20, 16, 20, 80),
-            sliver: SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, i) {
-                  final unit = repo.course.units[i];
-                  final prog = ref.read(progressProvider.notifier).getUnitProgress(unit.id);
-                  return _UnitSection(
-                    unit: unit,
-                    completed: prog.completed,
-                    total: prog.total,
-                    completedIds: progress.completedLessonIds,
-                    lessonStars: progress.lessonStars,
-                    isUnlocked: (id) => ref.read(progressProvider.notifier).isLessonUnlocked(id),
-                    onTapLesson: (id) => context.push('/lesson/$id'),
-                  ).animate().fadeIn(delay: (i * 80).ms).slideY(begin: 0.2);
-                },
-                childCount: repo.course.units.length,
-              ),
+            forceElevated: innerBoxIsScrolled,
+            bottom: TabBar(
+              controller: _tabController,
+              labelColor: AppColors.primary,
+              unselectedLabelColor: AppColors.textMuted,
+              indicatorColor: AppColors.primary,
+              indicatorWeight: 3,
+              labelStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+              unselectedLabelStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+              tabs: levels.map((l) => Tab(text: l.name)).toList(),
             ),
           ),
         ],
+        body: TabBarView(
+          controller: _tabController,
+          children: levels.map((level) => _LevelTab(level: level)).toList(),
+        ),
       ),
     );
   }
 }
 
-class _UnitSection extends StatefulWidget {
-  final Unit unit;
+class _LevelTab extends ConsumerWidget {
+  final Level level;
+
+  const _LevelTab({required this.level});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final progress = ref.watch(progressProvider);
+    final notifier = ref.read(progressProvider.notifier);
+    final levelProg = notifier.getLevelProgress(level.id);
+
+    return ListView(
+      padding: const EdgeInsets.fromLTRB(20, 16, 20, 80),
+      children: [
+        // Level header
+        Container(
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: AppColors.white,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: AppColors.border),
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${level.name} — ${level.title}',
+                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800, color: AppColors.textDark),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      '${levelProg.completed}/${levelProg.total} bài hoàn thành',
+                      style: const TextStyle(fontSize: 12, color: AppColors.textMuted),
+                    ),
+                    const SizedBox(height: 8),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(4),
+                      child: LinearProgressIndicator(
+                        value: levelProg.total > 0 ? levelProg.completed / levelProg.total : 0,
+                        backgroundColor: AppColors.cream,
+                        valueColor: const AlwaysStoppedAnimation(AppColors.primary),
+                        minHeight: 6,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ).animate().fadeIn(),
+        const SizedBox(height: 16),
+
+        // Topics
+        ...level.topics.asMap().entries.map((entry) {
+          final i = entry.key;
+          final topic = entry.value;
+          final topicProg = notifier.getTopicProgress(topic.id);
+          return _TopicCard(
+            topic: topic,
+            completed: topicProg.completed,
+            total: topicProg.total,
+            completedIds: progress.completedLessonIds,
+            lessonStars: progress.lessonStars,
+            isUnlocked: notifier.isLessonUnlocked,
+            onTapLesson: (id) => context.push('/lesson/$id'),
+          ).animate().fadeIn(delay: (i * 80).ms).slideY(begin: 0.2);
+        }),
+      ],
+    );
+  }
+}
+
+class _TopicCard extends StatefulWidget {
+  final Topic topic;
   final int completed;
   final int total;
   final List<String> completedIds;
@@ -64,8 +171,8 @@ class _UnitSection extends StatefulWidget {
   final bool Function(String) isUnlocked;
   final ValueChanged<String> onTapLesson;
 
-  const _UnitSection({
-    required this.unit,
+  const _TopicCard({
+    required this.topic,
     required this.completed,
     required this.total,
     required this.completedIds,
@@ -75,10 +182,10 @@ class _UnitSection extends StatefulWidget {
   });
 
   @override
-  State<_UnitSection> createState() => _UnitSectionState();
+  State<_TopicCard> createState() => _TopicCardState();
 }
 
-class _UnitSectionState extends State<_UnitSection> {
+class _TopicCardState extends State<_TopicCard> {
   bool _expanded = true;
 
   @override
@@ -92,7 +199,7 @@ class _UnitSectionState extends State<_UnitSection> {
       ),
       child: Column(
         children: [
-          // Unit header
+          // Topic header
           GestureDetector(
             onTap: () => setState(() => _expanded = !_expanded),
             child: Padding(
@@ -106,16 +213,15 @@ class _UnitSectionState extends State<_UnitSection> {
                       color: AppColors.cream,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Center(child: Text(widget.unit.icon, style: const TextStyle(fontSize: 24))),
+                    child: Center(child: Text(widget.topic.icon, style: const TextStyle(fontSize: 24))),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(widget.unit.title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.textDark)),
-                        const SizedBox(height: 2),
-                        Text(widget.unit.subtitle, style: const TextStyle(fontSize: 12, color: AppColors.textMuted)),
+                        Text(widget.topic.title,
+                            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.textDark)),
                         const SizedBox(height: 6),
                         Row(
                           children: [
@@ -131,7 +237,8 @@ class _UnitSectionState extends State<_UnitSection> {
                               ),
                             ),
                             const SizedBox(width: 8),
-                            Text('${widget.completed}/${widget.total}', style: const TextStyle(fontSize: 11, color: AppColors.textMuted, fontWeight: FontWeight.w600)),
+                            Text('${widget.completed}/${widget.total}',
+                                style: const TextStyle(fontSize: 11, color: AppColors.textMuted, fontWeight: FontWeight.w600)),
                           ],
                         ),
                       ],
@@ -142,22 +249,37 @@ class _UnitSectionState extends State<_UnitSection> {
               ),
             ),
           ),
-          // Lessons list
+
+          // 4 kỹ năng
           if (_expanded) ...[
             const Divider(height: 1, color: AppColors.border),
-            ...widget.unit.lessons.map((lesson) {
-              final unlocked = widget.isUnlocked(lesson.id);
-              final done = widget.completedIds.contains(lesson.id);
-              final stars = widget.lessonStars[lesson.id] ?? 0;
-
-              return _LessonRow(
-                lesson: lesson,
-                unlocked: unlocked,
-                done: done,
-                stars: stars,
-                onTap: unlocked ? () => widget.onTapLesson(lesson.id) : null,
-              );
-            }),
+            Padding(
+              padding: const EdgeInsets.all(12),
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  final tileWidth = (constraints.maxWidth - 12) / 3;
+                  return Wrap(
+                    spacing: 6,
+                    runSpacing: 6,
+                    children: widget.topic.lessons.map((lesson) {
+                      final unlocked = widget.isUnlocked(lesson.id);
+                      final done = widget.completedIds.contains(lesson.id);
+                      final stars = widget.lessonStars[lesson.id] ?? 0;
+                      return SizedBox(
+                        width: tileWidth,
+                        child: _SkillTile(
+                          lesson: lesson,
+                          unlocked: unlocked,
+                          done: done,
+                          stars: stars,
+                          onTap: unlocked ? () => widget.onTapLesson(lesson.id) : null,
+                        ),
+                      );
+                    }).toList(),
+                  );
+                },
+              ),
+            ),
           ],
         ],
       ),
@@ -165,14 +287,14 @@ class _UnitSectionState extends State<_UnitSection> {
   }
 }
 
-class _LessonRow extends StatelessWidget {
+class _SkillTile extends StatelessWidget {
   final Lesson lesson;
   final bool unlocked;
   final bool done;
   final int stars;
   final VoidCallback? onTap;
 
-  const _LessonRow({
+  const _SkillTile({
     required this.lesson,
     required this.unlocked,
     required this.done,
@@ -182,64 +304,77 @@ class _LessonRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    final color = unlocked
+        ? (_skillColors[lesson.skill] ?? AppColors.primary)
+        : AppColors.textLight;
+    final bgColor = unlocked
+        ? (_skillBgColors[lesson.skill] ?? AppColors.cream)
+        : AppColors.cream.withOpacity(0.5);
+
+    return GestureDetector(
       onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-        child: Row(
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 4),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 6),
+        decoration: BoxDecoration(
+          color: done ? bgColor : (unlocked ? bgColor.withOpacity(0.6) : AppColors.cream.withOpacity(0.3)),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: done ? color : (unlocked ? color.withOpacity(0.4) : AppColors.border),
+            width: done ? 1.5 : 1,
+          ),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              width: 36,
-              height: 36,
-              decoration: BoxDecoration(
-                color: done
-                    ? AppColors.successLight
-                    : unlocked
-                        ? AppColors.cream
-                        : AppColors.border,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Icon(
-                done ? Icons.check_circle : unlocked ? Icons.play_circle_outline : Icons.lock_outline,
-                size: 20,
-                color: done ? AppColors.success : unlocked ? AppColors.primary : AppColors.textMuted,
-              ),
+            Icon(
+              done
+                  ? Icons.check_circle
+                  : unlocked
+                      ? _skillIcon(lesson.skill)
+                      : Icons.lock_outline,
+              size: 20,
+              color: done ? color : unlocked ? color : AppColors.textLight,
             ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    lesson.title,
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: unlocked ? AppColors.textDark : AppColors.textMuted,
-                    ),
-                  ),
-                  if (lesson.subtitle != null)
-                    Text(lesson.subtitle!, style: const TextStyle(fontSize: 12, color: AppColors.textMuted)),
-                ],
+            const SizedBox(height: 4),
+            Text(
+              lesson.skill.label,
+              style: TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.w700,
+                color: unlocked ? color : AppColors.textLight,
               ),
+              textAlign: TextAlign.center,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text('${lesson.xpReward} XP', style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: AppColors.primary)),
-                if (done && stars > 0)
-                  Row(
-                    children: List.generate(3, (i) => Icon(
-                      Icons.star,
-                      size: 12,
-                      color: i < stars ? AppColors.star : AppColors.starEmpty,
-                    )),
-                  ),
-              ],
+            if (done && stars > 0) ...[
+              const SizedBox(height: 3),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(3, (i) => Icon(
+                  Icons.star,
+                  size: 8,
+                  color: i < stars ? AppColors.star : AppColors.starEmpty,
+                )),
+              ),
+            ],
+            Text(
+              '${lesson.xpReward} XP',
+              style: TextStyle(fontSize: 9, color: unlocked ? color.withOpacity(0.7) : AppColors.textLight),
             ),
           ],
         ),
       ),
     );
+  }
+
+  IconData _skillIcon(SkillType skill) {
+    switch (skill) {
+      case SkillType.vocabulary: return Icons.style_outlined;
+      case SkillType.grammar:    return Icons.account_tree_outlined;
+      case SkillType.listening:  return Icons.headphones_outlined;
+      case SkillType.speaking:   return Icons.mic_outlined;
+      case SkillType.reading:    return Icons.menu_book_outlined;
+      case SkillType.writing:    return Icons.edit_outlined;
+    }
   }
 }
