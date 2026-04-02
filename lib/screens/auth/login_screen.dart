@@ -83,6 +83,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
     if (msg.contains('invalid login credentials') || msg.contains('invalid_credentials')) {
       return 'Email hoặc mật khẩu không đúng';
     }
+    if (msg.contains('email_not_confirmed') || msg.contains('email not confirmed')) {
+      return 'Vui lòng xác nhận email trước khi đăng nhập.';
+    }
     if (msg.contains('user already registered') || msg.contains('already been registered')) {
       return 'Email này đã được đăng ký. Hãy đăng nhập.';
     }
@@ -155,6 +158,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
+                autocorrect: false,
+                enableSuggestions: false,
                 decoration: const InputDecoration(
                   labelText: 'Email',
                   prefixIcon: Icon(Icons.email_outlined),
@@ -166,6 +171,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                 controller: _passwordController,
                 obscureText: _obscure,
                 textInputAction: TextInputAction.done,
+                autocorrect: false,
+                enableSuggestions: false,
                 onSubmitted: (_) => _submit(),
                 decoration: InputDecoration(
                   labelText: 'Mật khẩu',

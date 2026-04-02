@@ -5,6 +5,21 @@ import 'auth_state.dart';
 class AuthNotifier extends StateNotifier<AppAuthState> {
   AuthNotifier() : super(const AppAuthState()) {
     _load();
+    Supabase.instance.client.auth.onAuthStateChange.listen((data) {
+      final session = data.session;
+      if (session != null) {
+        final user = session.user;
+        final metadata = user.userMetadata ?? {};
+        state = AppAuthState(
+          isLoggedIn: true,
+          userId: user.id,
+          email: user.email,
+          nickname: metadata['nickname'] as String?,
+        );
+      } else {
+        state = const AppAuthState();
+      }
+    });
   }
 
   void _load() {
